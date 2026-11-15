@@ -1,0 +1,40 @@
+{
+  "server.mjs": [
+    {
+      "current": "      return res.end('export default '+JSON.stringify({uiOrigin,https:Boolean(arcadeHost),gameSuffix:arcadeHost?isolated.contentSuffix:null})+';');\n",
+      "previous": "      return res.end('export default '+JSON.stringify({uiOrigin,https:Boolean(arcadeHost)})+';');\n"
+    },
+    {
+      "current": "      res.end(`window.POXEY_RUNTIME=${JSON.stringify({proxyOrigin:isolated?null:proxyOrigin,arcadeOrigin:isolated?isolated.arcade?.origin||null:proxyOrigin,uiOrigin,contentSuffix:isolated?.contentSuffix,fixtureRoutes,fixtureWorkspace,isolated:Boolean(isolated)})};`);return;\n",
+      "previous": "      res.end(`window.POXEY_RUNTIME=${JSON.stringify({proxyOrigin:isolated?null:proxyOrigin,arcadeOrigin:isolated?isolated.arcade?.origin||null:proxyOrigin,uiOrigin,fixtureRoutes,fixtureWorkspace,isolated:Boolean(isolated)})};`);return;\n"
+    },
+    {
+      "current": "    if(baseline&&isolated?.production){res.writeHead(404).end();return;}\n",
+      "previous": ""
+    },
+    {
+      "current": "    headers['Content-Security-Policy']=isProxy?`frame-ancestors ${uiOrigin}; object-src 'none'${isolated&&!arcadeHost?\"; frame-src 'self'; connect-src 'self'; base-uri 'none'\":\"\"}`:baseline?\"default-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'\":`default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; frame-src ${isolated?isolated.frameSources:proxyRoutes.map(route=>route.origin).join(' ')}; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'`;\n",
+      "previous": "    headers['Content-Security-Policy']=isProxy?`frame-ancestors ${uiOrigin}; object-src 'none'${isolated&&!arcadeHost?\"; frame-src 'self'; connect-src 'self'; base-uri 'none'\":\"\"}`:baseline?\"default-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'\":`default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; frame-src ${isolated?`https://*.test:${port}`:proxyRoutes.map(route=>route.origin).join(' ')}; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'`;\n"
+    },
+    {
+      "current": "  main.listen(port,isolated?.production?(options.bindAddress||'127.0.0.1'):'127.0.0.1');for(const [index,{server}] of proxies.entries())server.listen(index?proof.secondaryPort:proxyPort,'127.0.0.1');\n",
+      "previous": "  main.listen(port,'127.0.0.1');for(const [index,{server}] of proxies.entries())server.listen(index?proof.secondaryPort:proxyPort,'127.0.0.1');\n"
+    }
+  ],
+  "public/web-edition.js": [
+    {
+      "current": "    let response;\n    for(let attempt=0;attempt<2;attempt++){\n     const workspace=await temporaryIsolationWorkspace();\n     if(webFrames.get(tab.id)!==entry)return;\n     response=await fetch('/api/isolation/route',{method:'POST',cache:'no-store',signal:AbortSignal.timeout(10000),\n      headers:{'X-Poxey-Workspace':workspace,'X-Poxey-Destination':destination,'X-Poxey-Tab':String(tab.id),'X-Poxey-Navigation':String(version),'X-Poxey-Source':tab.isolatedSource||''}});\n     if(response.status!==410)break;\n     if(isolatedWorkspace===workspace)isolatedWorkspace=null;\n    }\n",
+      "previous": "    const workspace=await temporaryIsolationWorkspace();\n    if(webFrames.get(tab.id)!==entry)return;\n    const response=await fetch('/api/isolation/route',{method:'POST',cache:'no-store',signal:AbortSignal.timeout(10000),\n     headers:{'X-Poxey-Workspace':workspace,'X-Poxey-Destination':destination,'X-Poxey-Tab':String(tab.id),'X-Poxey-Navigation':String(version),'X-Poxey-Source':tab.isolatedSource||''}});\n"
+    },
+    {
+      "current": "    if(url.protocol!=='https:'||!/^r-[a-f0-9-]{36}$/.test(url.hostname.split('.')[0])||\n      url.hostname.split('.').slice(1).join('.')!==(window.POXEY_RUNTIME.contentSuffix||'test')||url.port!==location.port||\n",
+      "previous": "    if(url.protocol!=='https:'||!/^r-[a-f0-9-]{36}\\.test$/.test(url.hostname)||url.port!==location.port||\n"
+    }
+  ],
+  "proxy-public/arcade/host.mjs": [
+    {
+      "current": " const expectedOrigin=hostConfig.https?`https://game-${gameHost}.${hostConfig.gameSuffix||'test'}${location.port?':'+location.port:''}`:(game.id==='local-slope'?'http://poxey-game-slope.localhost:12001':`http://poxey-game-${Number(game.id.slice(3))}.localhost:${10000+Number(game.id.slice(3))}`);\n",
+      "previous": " const expectedOrigin=hostConfig.https?`https://game-${gameHost}.test:${location.port}`:(game.id==='local-slope'?'http://poxey-game-slope.localhost:12001':`http://poxey-game-${Number(game.id.slice(3))}.localhost:${10000+Number(game.id.slice(3))}`);\n"
+    }
+  ]
+}

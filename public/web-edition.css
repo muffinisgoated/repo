@@ -1,0 +1,93 @@
+/* Web adaptation rules only. The primary design is from uploaded desktop CSS. */
+body.web-edition { --accent:#a996ec; }
+.web-only-note { font-size:11px;line-height:1.6;color:var(--muted); }
+.web-only-tag { background:var(--panel-2);border:1px solid var(--line);border-radius:99px;padding:4px 9px;font-size:10px;color:var(--subtext); }
+.web-home-hint {font-size:10px;color:#ffffff9c;margin-top:24px;text-align:center;letter-spacing:.05em}
+.browser-page-message {height:100%;padding: clamp(22px,5vw,65px);display:flex;align-items:center;justify-content:center;color:var(--text);}
+.browser-page-card {width:min(600px,100%);background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:36px;box-shadow:0 25px 90px #0003}
+.browser-page-card h2{font-size:29px;letter-spacing:-1px;font-weight:650;margin:12px 0 12px}.browser-page-card p{color:var(--subtext);font-size:13px;line-height:1.8}
+.browser-page-card code{color:var(--text);font-size:12px;overflow-wrap:anywhere}
+.web-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:18px 0 28px}
+.web-card{background:var(--panel-2);border:1px solid var(--line);border-radius:13px;padding:12px;text-align:left;color:var(--text);min-width:0}
+.web-card:hover{border-color:var(--accent);background:var(--hover)}
+.web-card.selected {outline:2px solid var(--accent);border-color:transparent}
+.web-card img{display:block;width:100%;height:94px;object-fit:cover;border-radius:8px;margin-bottom:11px;background:#111}
+.web-card strong{font-size:11px;font-weight:650}
+.web-drawer-title{font-size:20px;margin:0 0 15px}.web-drawer-section{font-size:12px;line-height:1.7;color:var(--subtext);padding-bottom:18px}
+.web-action{font:inherit;font-size:12px;background:var(--panel-2);color:var(--text);border:1px solid var(--line);padding:10px 14px;border-radius:10px}
+.web-action.primary{background:var(--contrast);color:var(--contrast-text);font-weight:650}
+.web-chip{display:inline-block;border-radius:7px;background:#a996ec1d;color:#c7b6f7;padding:5px 10px;font-size:10px}
+.web-popover{position:absolute;right:20px;bottom:40px;max-width:420px;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:var(--panel);box-shadow:0 20px 55px #0005;z-index:100;font-size:12px;color:var(--text)}
+#web-toast[hidden]{display:none}
+/* Original desktop markup/styles are kept, only adapt sizes for Chromebook/mobile. */
+.web-edition .status-bar{z-index:5}
+.web-edition .chrome-head{z-index:30}
+.web-edition #ai-panel{max-width:60vw}
+.web-edition .ai-messages{padding:22px 18px}
+.web-edition .ai-model-status{cursor:pointer}
+.web-edition .shortcut-tile{cursor:pointer}
+.web-edition .arcade-open .browser-stage{visibility:hidden}
+.web-edition .arcade{position:absolute}
+.web-edition .game-panel{max-width:670px;margin:20px auto 0;background:var(--ar-card);padding:24px;border:1px solid var(--ar-line);border-radius:18px;text-align:center}
+.web-edition .game-panel canvas{width:min(350px,100%);height:auto;border-radius:14px;display:block;margin:auto;background:#111720}
+.web-edition .game-buttons{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:15px 0}
+.web-edition .game-panel h2{font-size:25px;margin:5px 0 14px}
+.web-edition .game-pad{display:none}
+.web-edition .arcade-card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;padding:20px 0 38px}
+.web-edition .arcade-library{overflow:auto}
+.web-edition .arcade-game-card{border:1px solid var(--ar-line);background:var(--ar-card);border-radius:16px;min-height:140px;padding:24px;text-align:left;color:var(--ar-text)}
+.web-edition .arcade-game-card strong{font-size:19px;display:block;margin:12px 0 8px}
+.web-edition .arcade-game-card span{font-size:12px;color:var(--ar-muted)}
+.web-edition .arcade-game-card:hover{outline:1px solid #af94ff}
+.web-edition .ai-content{min-height:0}
+.web-edition .home-time{padding-bottom:5px}
+.web-edition .home-date{font-size:11px;color:var(--home-muted);letter-spacing:1px}
+.web-edition .atelier-shortcuts button{background:transparent;border:none;color:var(--home-ink);font-size:10px}
+.web-edition .shortcut-icon{width:51px;height:51px;border-radius:16px;display:grid;place-items:center;margin:0 auto 8px;background:#ffffff20;color:white;font-size:24px;box-shadow:0 12px 26px #0002}
+.web-edition .shortcut{min-width:70px}
+.web-edition .ai-placeholder{font-size:13px;color:var(--muted);line-height:1.75;padding:20px;background:var(--panel-2);border:1px solid var(--line);border-radius:14px}
+.web-edition .ai-placeholder b{display:block;color:var(--text);font-size:14px;margin:0 0 5px}
+.web-edition .pill-ai{white-space:nowrap}
+@media(max-width:900px){
+ .web-edition .brand{margin-right:2px!important}
+ .web-edition .chrome-topline{gap:5px;padding:0 9px}
+ .web-edition .top-text-button{padding:5px 7px}
+ .web-edition .chrome-navbar{padding:5px 8px 8px;gap:5px}
+ .web-edition .tabstrip{min-width:60px}
+ .web-edition #ai-panel{position:absolute;right:0;top:0;bottom:0;width:min(430px,100%);max-width:100%;z-index:40;box-shadow:-30px 0 80px #0006}
+ .web-edition .ai-open .browser-stage{display:block}
+}
+@media(max-width:600px){
+ .web-edition .chrome-topline{height:42px!important}
+ .web-edition .brand-logo{width:23px;height:23px}
+ .web-edition .chrome-navbar{height:48px!important}
+ .web-edition .nav-divider,.web-edition #btn-downloads,.web-edition #btn-history,.web-edition #btn-bookmark,.web-edition .omnibox kbd{display:none}
+ .web-edition #btn-arcade span:last-child{display:none}
+ .web-edition #btn-arcade{font-size:20px}
+ .web-edition .pill-ai span{display:none}
+ .web-edition .pill-ai{width:34px;padding:7px;display:flex;justify-content:center}
+ .web-edition .nav-arrows{gap:0}
+ .web-edition #nav-forward{display:none}
+ .web-edition .nav-actions{gap:2px}
+ .web-edition .omnibox{min-width:70px}
+ .web-edition .omnibox input{font-size:11px}
+ .web-edition .home-clock{font-size:57px}
+ .web-edition .home-greeting{font-size:22px!important}
+ .web-edition .atelier-home-content{width:calc(100% - 30px);padding-bottom:50px}
+ .web-edition .atelier-search{height:52px;padding:0 13px}
+ .web-edition .atelier-shortcuts{gap:10px;margin-top:20px}
+ .web-edition .shortcut{min-width:57px}
+ .web-edition .shortcut-icon{width:45px;height:45px}
+ .web-edition .home-footer{left:15px;right:15px;bottom:12px}
+ .web-edition .browser-page-card{padding:20px}
+ .web-edition .arcade-nav{display:none}
+ .web-edition .arcade-library{padding:18px 12px}
+ .web-edition .arcade h1{font-size:27px}
+ .web-edition .arcade-hero{padding:25px;min-height:200px}
+ .web-edition .arcade-collage{display:none}
+ .web-edition .game-pad{display:block}
+ .web-edition #ai-panel{width:100%;min-width:0;max-width:100%}
+ .web-edition .drawer{width:100%;max-width:100%}
+ .web-edition .game-panel{padding:12px}
+ .web-edition .status-bar{height:20px}
+}

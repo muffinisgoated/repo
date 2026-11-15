@@ -1,0 +1,5 @@
+{
+  "folders": [{"path":"."}],
+  "settings": {"files.exclude":{"**/node_modules":true,"**/.DS_Store":true},"files.autoSave":"afterDelay","editor.tabSize":2},
+  "extensions": {"recommendations":[]}
+}

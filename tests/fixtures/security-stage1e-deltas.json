@@ -1,0 +1,42 @@
+{
+  "server.mjs": [
+    {
+      "previous": "import {createRelayAdmission,relayRequest} from './relay-admission.mjs';\nimport {startRelayOperator} from './relay-operator.mjs';\n",
+      "current": "import {createRelayAdmission,relayRequest} from './relay-admission.mjs';\nimport {createOriginRegistry} from './isolation/origin-registry.mjs';\nimport {startRelayOperator} from './relay-operator.mjs';\n"
+    },
+    {
+      "previous": "    ...(proof?[{origin:`http://127.0.0.1:${proof.secondaryPort}`,site:proof.sites[1]}]:[])];\n  const relay=createRelayAdmission();\n",
+      "current": "    ...(proof?[{origin:`http://127.0.0.1:${proof.secondaryPort}`,site:proof.sites[1]}]:[])];\n  const originRegistry=proof?createOriginRegistry():null;\n  if(proof)for(const route of proxyRoutes)route.binding=originRegistry.allocate('local-proof',route.site.upstream,{fixtureOrigin:route.origin});\n  const relay=createRelayAdmission();\n"
+    },
+    {
+      "previous": "    if(proof&&!isProxy&&proof.serve(req,res,proxyRoutes))return;\n    if(proof&&isProxy&&req.url==='/origin-proof-config.js'){\n",
+      "current": "    if(proof&&!isProxy&&proof.serve(req,res,proxyRoutes))return;\n    if(proof&&isProxy&&originRegistry.resolveHost(req.headers.host)!==route.binding){res.writeHead(403).end();return;}\n    if(proof&&isProxy&&req.url==='/origin-proof-config.js'){\n"
+    },
+    {
+      "previous": "      const scope=ticketRoute&&proof?req.headers['x-poxey-relay-origin']:null;\n      if(ticketRoute&&proof&&!proxyRoutes.some(route=>route.origin===scope)){res.writeHead(403).end();return;}\n      relayRequest(req,res,{admission:relay,origin:uiOrigin,client,scope});return;\n    }\n",
+      "current": "      const scope=ticketRoute&&proof?req.headers['x-poxey-relay-origin']:null;\n      const binding=proof&&proxyRoutes.find(route=>route.origin===scope)?.binding;\n      if(ticketRoute&&proof&&!originRegistry.authorize('local-proof',binding?.id)){res.writeHead(403).end();return;}\n      relayRequest(req,res,{admission:relay,origin:uiOrigin,client,scope:binding?.id||null});return;\n    }\n"
+    },
+    {
+      "previous": "    try{clientID=connectionClient(target[1]);}catch{return deny();}\n    const grant=relay.consume(target[2],clientID,proof?route.origin:null);\n    if(!grant)return deny();\n",
+      "current": "    try{clientID=connectionClient(target[1]);}catch{return deny();}\n    const binding=proof?originRegistry.resolveHost(req.headers.host):null;\n    if(proof&&binding!==route.binding)return deny();\n    const grant=relay.consume(target[2],clientID,binding?.id||null);\n    if(!grant)return deny();\n"
+    },
+    {
+      "previous": "    const transferGuard=setInterval(()=>{if(socket.bytesRead+socket.bytesWritten>limits.connectionBytes){metrics.add('rateLimits');socket.destroy();}},1000);transferGuard.unref();\n    const expiration=setTimeout(()=>socket.destroy(),Math.max(0,grant.expires-Date.now()));expiration.unref();\n    socket.once('close',()=>{clearTimeout(expiration);clearInterval(transferGuard);releaseSocket(socket);});\n    try{wsServer.handleUpgrade(req,socket,head,ws=>{metrics.add('wsOpened');connectedClients.add(ws,clientID);const peer=managedConnection(ws,{limits,metrics,budget,Socket:route.site?.Socket,wispVersion:req.headers['sec-websocket-protocol']&&wisp.options.wisp_version===2?2:1});wispPeers.set(socket,{ws,idleFor:peer.idleFor});});}catch{metrics.add('wsFailures');socket.destroy();}\n  });\n",
+      "current": "    const transferGuard=setInterval(()=>{if(socket.bytesRead+socket.bytesWritten>limits.connectionBytes){metrics.add('rateLimits');socket.destroy();}},1000);transferGuard.unref();\n    const expiration=setTimeout(()=>socket.destroy(),Math.max(0,Math.min(grant.expires,binding?.expires??Infinity)-Date.now()));expiration.unref();\n    socket.once('close',()=>{clearTimeout(expiration);clearInterval(transferGuard);releaseSocket(socket);});\n    try{wsServer.handleUpgrade(req,socket,head,ws=>{metrics.add('wsOpened');connectedClients.add(ws,clientID);const peer=managedConnection(ws,{limits,metrics,budget,Socket:route.site?.Socket,destination:binding?.upstream,wispVersion:req.headers['sec-websocket-protocol']&&wisp.options.wisp_version===2?2:1});wispPeers.set(socket,{ws,idleFor:peer.idleFor});});}catch{metrics.add('wsFailures');socket.destroy();}\n  });\n"
+    },
+    {
+      "previous": "  main.listen(port,'127.0.0.1');for(const [index,{server}] of proxies.entries())server.listen(index?proof.secondaryPort:proxyPort,'127.0.0.1');\n  function stop(){operator?.close();clearInterval(idleWispTimer);arcade.close();clearInterval(presenceTimer);connectedClients.close();visitors.close();sessions.clear();for(const socket of sockets)socket.destroy();for(const server of servers){server.closeAllConnections();server.close();}wsServer.close();metrics.close();ai.close();}\n  return {servers,stop,uiOrigin,proxyOrigin,relay,diagnostics:()=>({webSockets:sockets.size}),monitoring:()=>{const snapshot=metrics.snapshot(),aiSnapshot=ai.snapshot();if(aiSnapshot.available)delete snapshot.unavailable.ai;return {...snapshot,ai:aiSnapshot,arcade:arcade.snapshot(),sessions:sessions.snapshot(),proxyClients:connectedClients.snapshot(),visitors:visitors.snapshot(),service:{listenersReady:servers.every(server=>server.listening)}};},limits};\n",
+      "current": "  main.listen(port,'127.0.0.1');for(const [index,{server}] of proxies.entries())server.listen(index?proof.secondaryPort:proxyPort,'127.0.0.1');\n  function stop(){originRegistry?.revokeWorkspace('local-proof');operator?.close();clearInterval(idleWispTimer);arcade.close();clearInterval(presenceTimer);connectedClients.close();visitors.close();sessions.clear();for(const socket of sockets)socket.destroy();for(const server of servers){server.closeAllConnections();server.close();}wsServer.close();metrics.close();ai.close();}\n  return {servers,stop,uiOrigin,proxyOrigin,relay,diagnostics:()=>({webSockets:sockets.size}),monitoring:()=>{const snapshot=metrics.snapshot(),aiSnapshot=ai.snapshot();if(aiSnapshot.available)delete snapshot.unavailable.ai;return {...snapshot,ai:aiSnapshot,arcade:arcade.snapshot(),sessions:sessions.snapshot(),proxyClients:connectedClients.snapshot(),visitors:visitors.snapshot(),service:{listenersReady:servers.every(server=>server.listening)}};},limits};\n"
+    }
+  ],
+  "wisp-capacity.mjs": [
+    {
+      "previous": "import {PacketQueue,TokenBucket} from './capacity.mjs';\nexport function managedConnection(ws,{limits,metrics,budget,wispVersion=1,Socket=SafeTCPSocket}){\n const overflow=()=>{metrics.add('queueOverflows');ws.close(1008,'Input budget exceeded');};\n",
+      "current": "import {PacketQueue,TokenBucket} from './capacity.mjs';\nexport function managedConnection(ws,{limits,metrics,budget,wispVersion=1,Socket=SafeTCPSocket,destination=null}){\n const upstream=destination?new URL(destination):null;\n const upstreamPort=upstream?.protocol==='https:'?443:80;\n const overflow=()=>{metrics.add('queueOverflows');ws.close(1008,'Input budget exceeded');};\n"
+    },
+    {
+      "previous": "   if(!Number.isSafeInteger(id)||id<1||this.streams[id]){metrics.add('streamRejected');ws.close(1008,'Invalid stream identifier');return;}\n   if(type!==1||![80,443].includes(port)||!validHostname(host)||Object.keys(this.streams).length>=limits.streamsPerConnection||Object.values(this.streams).filter(s=>s.socket.hostname===host).length>=limits.streamsPerHost||budget.streams>=limits.streamsGlobal||!starts.take()){\n    metrics.add('streamRejected');this.ws.send(new packet.WispPacket({type:4,stream_id:id,payload:new packet.ClosePayload({reason:packet.close_reasons.ConnThrottled})})).catch(()=>{});return;\n",
+      "current": "   if(!Number.isSafeInteger(id)||id<1||this.streams[id]){metrics.add('streamRejected');ws.close(1008,'Invalid stream identifier');return;}\n   if(upstream&&(host!==upstream.hostname||port!==upstreamPort)||type!==1||![80,443].includes(port)||!validHostname(host)||Object.keys(this.streams).length>=limits.streamsPerConnection||Object.values(this.streams).filter(s=>s.socket.hostname===host).length>=limits.streamsPerHost||budget.streams>=limits.streamsGlobal||!starts.take()){\n    metrics.add('streamRejected');this.ws.send(new packet.WispPacket({type:4,stream_id:id,payload:new packet.ClosePayload({reason:packet.close_reasons.ConnThrottled})})).catch(()=>{});return;\n"
+    }
+  ]
+}

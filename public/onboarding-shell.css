@@ -1,0 +1,11 @@
+body.setup-booting{background:#0d0b14!important}
+body.setup-booting > :not(#installed-setup){display:none!important}
+#installed-setup{position:fixed;inset:0;width:100%;height:100%;border:0;z-index:2147483000;background:#0d0b14;color-scheme:dark}
+.wallpaper-scene[data-animated=true]{animation:gallery-drift 35s ease-in-out infinite alternate}
+.atelier-home[data-paused=true] .wallpaper-scene{animation-play-state:paused!important}
+.atelier-home[data-slow=true] .wallpaper-scene[data-animated=true]{animation-duration:60s}
+body[data-motion=off] .wallpaper-scene{animation:none!important}
+.wallpaper-thumb{background-size:cover;background-position:center}
+body[data-spacing=compact] .tab{height:30px}body[data-spacing=compact] .atelier-search{height:48px}
+@keyframes gallery-drift{to{transform:scale(1.045) translate(.5%,.3%)}}
+@media(prefers-reduced-motion:reduce){.wallpaper-scene{animation:none!important}}

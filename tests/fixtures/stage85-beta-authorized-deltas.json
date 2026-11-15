@@ -1,0 +1,98 @@
+{
+  "server.mjs": [
+    {
+      "current": "import {createBetaArcade} from './beta-arcade/routes.mjs';\n",
+      "previous": ""
+    },
+    {
+      "current": "  const betaArcade=createBetaArcade({root,uiOrigin,proxyOrigin});\n",
+      "previous": ""
+    },
+    {
+      "current": "    if(betaArcade.handle(req,res,isProxy))return;\n    if(req.url==='/arcade/catalog.json'){try{const base=JSON.parse(fs.readFileSync(path.join(root,'public/arcade/catalog.json'))),data=JSON.stringify([...base,...betaArcade.catalog]);res.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(req.method==='HEAD'?undefined:data);}catch{res.writeHead(503).end();}return;}\n",
+      "previous": ""
+    },
+    {
+      "current": "  const arcade=new ArcadeMonitor({catalog:options.arcadeCatalog||path.join(root,'public/arcade/catalog.json'),directory:options.arcadeDirectory,extraGames:options.arcadeCatalog?[]:betaArcade.catalog});\n",
+      "previous": "  const arcade=new ArcadeMonitor({catalog:options.arcadeCatalog||path.join(root,'public/arcade/catalog.json'),directory:options.arcadeDirectory});\n"
+    }
+  ],
+  "arcade-telemetry/monitor.mjs": [
+    {
+      "current": " constructor({catalog,directory,now=Date.now,extraGames=[]}={}){this.extraGames=extraGames;this.now=now;this.catalog=catalog;this.connections=new Map();this.starts=[];this.events=[];this.rejected=0;this.games=new Map();this.registryAvailable=false;this.historyAvailable=false;try{if(directory){this.store=new ArcadeStore(directory,{now});this.historyAvailable=true;}}catch{this.historyError=true;}this.refreshRegistry();this.ws=new WebSocketServer({noServer:true,maxPayload:8192,perMessageDeflate:false});this.timer=setInterval(()=>this.sweep(),PRESENCE_PING_MS);this.timer.unref();}\n refreshRegistry(){try{const stat=fs.statSync(this.catalog);if(stat.size>1048576)throw Error();if(this.registryAvailable&&this.mtime===stat.mtimeMs)return;const games=registry([...JSON.parse(fs.readFileSync(this.catalog,'utf8')),...this.extraGames]);this.store?.register(games);this.games=new Map(games.map(g=>[g.id,g]));this.mtime=stat.mtimeMs;this.registryAvailable=true;}catch{this.registryAvailable=false;}}\n",
+      "previous": " constructor({catalog,directory,now=Date.now}={}){this.now=now;this.catalog=catalog;this.connections=new Map();this.starts=[];this.events=[];this.rejected=0;this.games=new Map();this.registryAvailable=false;this.historyAvailable=false;try{if(directory){this.store=new ArcadeStore(directory,{now});this.historyAvailable=true;}}catch{this.historyError=true;}this.refreshRegistry();this.ws=new WebSocketServer({noServer:true,maxPayload:8192,perMessageDeflate:false});this.timer=setInterval(()=>this.sweep(),PRESENCE_PING_MS);this.timer.unref();}\n refreshRegistry(){try{const stat=fs.statSync(this.catalog);if(stat.size>1048576)throw Error();if(this.registryAvailable&&this.mtime===stat.mtimeMs)return;const games=registry(JSON.parse(fs.readFileSync(this.catalog,'utf8')));this.store?.register(games);this.games=new Map(games.map(g=>[g.id,g]));this.mtime=stat.mtimeMs;this.registryAvailable=true;}catch{this.registryAvailable=false;}}\n"
+    }
+  ],
+  "public/arcade/state.mjs": [
+    {
+      "current": "export function isBetaEntry(game){return game?.type==='beta-local'&&game.releaseStatus==='beta-local'&&game.verified===false&&game.beta?.localOnly===true&&/^gn-[0-9]+$/.test(game.id)&&game.url===`/arcade-beta/runtime/${game.id}/index.beta.html`;}\nexport function isLibraryEntry(game){return game.disabled!==true&&!RETIRED_GAME_IDS.includes(game.id)&&(isBetaEntry(game)||game.verified===true||(game.releaseStatus==='awaiting-user-gameplay'&&game.verification?.launch==='verified-stage2'));}\n",
+      "previous": "export function isLibraryEntry(game){return !RETIRED_GAME_IDS.includes(game.id)&&(game.verified===true||(game.releaseStatus==='awaiting-user-gameplay'&&game.verification?.launch==='verified-stage2'));}\n"
+    },
+    {
+      "current": "export function filterGames(games,{query='',category='All',view='Discover',favorites=[],recent=[]}={}){let result=games.filter(isLibraryEntry);if(view==='Beta games')result=result.filter(isBetaEntry);if(view==='Favorites')result=result.filter(g=>favorites.includes(g.id));if(view==='Recently played')result=recent.map(id=>result.find(g=>g.id===id)).filter(Boolean);return result.filter(g=>(category==='All'||category==='Beta'&&isBetaEntry(g)||g.category===category)&&(g.name+' '+g.category).toLowerCase().includes(query.trim().toLowerCase()));}\n",
+      "previous": "export function filterGames(games,{query='',category='All',view='Discover',favorites=[],recent=[]}={}){let result=games.filter(isLibraryEntry);if(view==='Favorites')result=result.filter(g=>favorites.includes(g.id));if(view==='Recently played')result=recent.map(id=>result.find(g=>g.id===id)).filter(Boolean);return result.filter(g=>(category==='All'||g.category===category)&&(g.name+' '+g.category).toLowerCase().includes(query.trim().toLowerCase()));}\n"
+    }
+  ],
+  "public/arcade/ui.mjs": [
+    {
+      "current": "  area.classList.toggle('arcade-unity-player',(game.type==='unity-local'||game.type==='beta-local'));\n",
+      "previous": "  area.classList.toggle('arcade-unity-player',game.type==='unity-local');\n"
+    },
+    {
+      "current": "  area.querySelector('#arcade-current-title').textContent=game.name;if(game.type==='beta-local')area.querySelector('.arcade-player-label').textContent='Beta \u00b7 gameplay unverified';area.querySelector('#arcade-controls').textContent=game.controls;\n  area.querySelector('#arcade-info').onclick=()=>{const d=document.createElement('dialog');d.className='arcade-license';for(const text of [game.name,game.rights,game.source,'Saves: '+game.saves,...(game.type==='beta-local'?['Beta: locally packaged, not gameplay verified. Private local testing only; no public redistribution approval.']:[]),...(game.releaseStatus==='awaiting-user-gameplay'?['Awaiting User Gameplay Test']:[])]){const p=document.createElement('p');p.textContent=text;d.append(p);}const b=document.createElement('button');b.className='arcade-player-control';b.textContent='Close';b.onclick=()=>d.close();d.append(b);d.onclose=()=>d.remove();area.append(d);d.showModal();};\n",
+      "previous": "  area.querySelector('#arcade-current-title').textContent=game.name;area.querySelector('#arcade-controls').textContent=game.controls;\n  area.querySelector('#arcade-info').onclick=()=>{const d=document.createElement('dialog');d.className='arcade-license';for(const text of [game.name,game.rights,game.source,'Saves: '+game.saves,...(game.releaseStatus==='awaiting-user-gameplay'?['Awaiting User Gameplay Test']:[])]){const p=document.createElement('p');p.textContent=text;d.append(p);}const b=document.createElement('button');b.className='arcade-player-control';b.textContent='Close';b.onclick=()=>d.close();d.append(b);d.onclose=()=>d.remove();area.append(d);d.showModal();};\n"
+    },
+    {
+      "current": "  const visible=filterGames(games.map(g=>qa&&g.type!=='beta-local'?{...g,verified:true,qaCandidate:!g.verified}:g),{query,category,view,...state});\n",
+      "previous": "  const visible=filterGames(games.map(g=>qa?{...g,verified:true,qaCandidate:!g.verified}:g),{query,category,view,...state});\n"
+    },
+    {
+      "current": "   art.append(play,favorite);const title=document.createElement('h3');title.textContent=game.name;const meta=document.createElement('p');meta.className='arcade-card-meta';meta.textContent=game.category+(game.type==='beta-local'?' \u00b7 Beta':game.releaseStatus==='awaiting-user-gameplay'?' \u00b7 Awaiting User Gameplay Test':qa&&game.qaCandidate?' \u00b7 QA candidate':'');card.append(art,title,meta);list.append(card);\n",
+      "previous": "   art.append(play,favorite);const title=document.createElement('h3');title.textContent=game.name;const meta=document.createElement('p');meta.className='arcade-card-meta';meta.textContent=game.category+(game.releaseStatus==='awaiting-user-gameplay'?' \u00b7 Awaiting User Gameplay Test':qa&&game.qaCandidate?' \u00b7 QA candidate':'');card.append(art,title,meta);list.append(card);\n"
+    },
+    {
+      "current": " function receive(event){if(!frame||event.origin!==window.POXEY_RUNTIME.proxyOrigin||event.source!==frame.contentWindow||event.data?.token!==token||event.data?.arcade!==true)return;if(event.data.type==='save-persisted'){const saved=root.querySelector('.arcade-save-status');if(saved)saved.textContent='Progress saved on this device';return;}const e=root.querySelector('#arcade-status');if(!e)return;if(event.data.type==='document-loaded'){clearTimeout(timer);e.textContent='';e.hidden=true;}else{e.hidden=false;e.textContent=event.data.type==='error'&&event.data.beta===true?'Beta game could not start: '+String(event.data.detail||'A local dependency failed.').slice(0,220)+'. Retry or return to Library.':event.data.type==='slow'?'Still loading? Retry or return to the Library.':'The game could not be opened. Retry or return to the Library.';}}\n",
+      "previous": " function receive(event){if(!frame||event.origin!==window.POXEY_RUNTIME.proxyOrigin||event.source!==frame.contentWindow||event.data?.token!==token||event.data?.arcade!==true)return;if(event.data.type==='save-persisted'){const saved=root.querySelector('.arcade-save-status');if(saved)saved.textContent='Progress saved on this device';return;}const e=root.querySelector('#arcade-status');if(!e)return;if(event.data.type==='document-loaded'){clearTimeout(timer);e.textContent='';e.hidden=true;}else{e.hidden=false;e.textContent=event.data.type==='slow'?'Still loading? Retry or return to the Library.':'The game could not be opened. Retry or return to the Library.';}}\n"
+    },
+    {
+      "current": "  if(games.some(g=>g.type==='beta-local')){const notice=document.createElement('p');notice.className='arcade-beta-notice';notice.textContent=games.filter(g=>g.type==='beta-local').length+' Beta games \u00b7 locally packaged for this private preview; gameplay and mobile support are unverified.';root.querySelector('.arcade-library').prepend(notice);}\n  if(qa){const p=document.createElement('p');p.className='arcade-qa-notice';p.textContent='QA view: legacy candidates are shown for testing. Beta labels remain in place.';root.querySelector('.arcade-library').prepend(p);}\n",
+      "previous": "  if(qa){const p=document.createElement('p');p.className='arcade-qa-notice';p.textContent='Isolated QA view: candidates are not yet published in the playable catalog.';root.querySelector('.arcade-library').prepend(p);}\n"
+    },
+    {
+      "current": "  for(const name of ['Discover',...(games.some(g=>g.type==='beta-local')?['Beta games']:[]),'Favorites','Recently played']){const b=document.createElement('button');b.className='arcade-nav-item'+(name===view?' selected':'');b.textContent=name;b.onclick=()=>{view=name;if(name==='Beta games'){category='All';query='';root.querySelector('.arcade-search').value='';}root.querySelectorAll('.arcade-nav-item').forEach(x=>x.classList.toggle('selected',x===b));renderCards();};root.querySelector('#arcade-views').append(b);}\n  for(const name of ['All',...(games.some(g=>g.type==='beta-local')?['Beta']:[]),...new Set(games.filter(g=>qa||isLibraryEntry(g)).map(g=>g.category))]){const b=document.createElement('button');b.textContent=name;b.onclick=()=>{category=name;\n",
+      "previous": "  for(const name of ['Discover','Favorites','Recently played']){const b=document.createElement('button');b.className='arcade-nav-item'+(name===view?' selected':'');b.textContent=name;b.onclick=()=>{view=name;root.querySelectorAll('.arcade-nav-item').forEach(x=>x.classList.toggle('selected',x===b));renderCards();};root.querySelector('#arcade-views').append(b);}\n  for(const name of ['All',...new Set(games.filter(g=>qa||isLibraryEntry(g)).map(g=>g.category))]){const b=document.createElement('button');b.textContent=name;b.onclick=()=>{category=name;\n"
+    },
+    {
+      "current": "  if(name==='All'||name==='Beta'){view='Discover';query='';root.querySelector('.arcade-search').value='';}\n",
+      "previous": "  if(name==='All'){view='Discover';query='';root.querySelector('.arcade-search').value='';}\n"
+    }
+  ],
+  "public/arcade/arcade.css": [
+    {
+      "current": "\n/* Private Beta entries share the existing Arcade layout. */\n.arcade-beta-notice{font-size:.85rem;line-height:1.5;color:#aaa;border:1px solid #444;border-radius:10px;padding:10px 14px;overflow-wrap:anywhere}.arcade-card{content-visibility:auto;contain-intrinsic-size:auto 300px}.arcade-player-label{font-size:.75rem;color:#bbb}.arcade-hero-cover img,.arcade-card-launch img{object-fit:contain}\n",
+      "previous": ""
+    }
+  ],
+  "proxy-public/arcade/host.mjs": [
+    {
+      "current": " const catalog=await fetch('./catalog.json',{cache:'no-store'}).then(r=>r.json());const game=catalog.find(g=>g.id===id&&g.type!=='builtin');if(!game||game.disabled===true)throw Error('Game package is unavailable');\n",
+      "previous": " const catalog=await fetch('./catalog.json',{cache:'no-store'}).then(r=>r.json());const game=catalog.find(g=>g.id===id&&g.type!=='builtin');if(!game)throw Error('Unknown game');\n"
+    },
+    {
+      "current": " const beta=game.type==='beta-local';let betaFailed=false;\n if(beta&&(game.releaseStatus!=='beta-local'||game.verified!==false||game.beta?.localOnly!==true||game.url!==`/arcade-beta/runtime/${game.id}/index.beta.html`))throw Error('Invalid local Beta game');\n",
+      "previous": ""
+    },
+    {
+      "current": " child.setAttribute('sandbox',(game.type==='local'||game.type==='unity-local'||beta)?'allow-scripts allow-pointer-lock':'allow-scripts allow-same-origin allow-pointer-lock allow-forms');\n",
+      "previous": " child.setAttribute('sandbox',(game.type==='local'||game.type==='unity-local')?'allow-scripts allow-pointer-lock':'allow-scripts allow-same-origin allow-pointer-lock allow-forms');\n"
+    },
+    {
+      "current": " child.onload=()=>{if(game.type==='unity-local'||beta&&betaFailed)return;if(beta)child.focus();message.hidden=true;send('document-loaded');};\n",
+      "previous": " child.onload=()=>{if(game.type==='unity-local')return;message.hidden=true;send('document-loaded');};\n"
+    },
+    {
+      "current": " }else if(!unity&&!beta)child.src=url.href;\n if(beta){url.searchParams.set('token',token);const ready=await fetch(url.href,{method:'HEAD',cache:'no-store'});if(!ready.ok)throw Error('The local Beta package is unavailable.');addEventListener('message',e=>{if(e.source!==child?.contentWindow||e.origin!=='null'||e.data?.betaGame!==true||e.data.token!==token)return;if(e.data.event==='error'){betaFailed=true;clearTimeout(timer);message.hidden=false;message.textContent='Beta runtime error. Retry or return to Library.';send('error',{beta:true,detail:typeof e.data.detail==='string'?e.data.detail.slice(0,220):''});}});child.src=url.href;}\n",
+      "previous": " }else if(!unity)child.src=url.href;\n"
+    }
+  ]
+}

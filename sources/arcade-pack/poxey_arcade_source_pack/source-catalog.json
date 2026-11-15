@@ -1,0 +1,46 @@
+{
+  "project": "PoxeyX1 Web Edition Arcade",
+  "recoveredOn": "2026-11-04",
+  "scope": "source discovery and integration input; not a tested runnable catalog",
+  "exclusions": [
+    "Do not access or use any repository under hiii121hub",
+    "Do not include https://subway-surfers-flame-alpha.vercel.app/",
+    "Do not add nonfunctional placeholders or substitute clones under original names",
+    "Do not modify PoxeyX1 Desktop or the attempt3 proxy project"
+  ],
+  "primaryRepositories": [
+    {"name":"GN-Math home","url":"https://github.com/gn-math","purpose":"Game organization / catalog","status":"public source confirmed"},
+    {"name":"GN-Math HTML","url":"https://github.com/gn-math/html","purpose":"Single-file web games","status":"public source confirmed"},
+    {"name":"GN-Math assets","url":"https://github.com/gn-math/assets","purpose":"Non-single-file games and assets","status":"public source confirmed"},
+    {"name":"GN-Math covers","url":"https://github.com/gn-math/covers","purpose":"Game covers","status":"public source confirmed"},
+    {"name":"GN-Math site","url":"https://github.com/gn-math/gn-math.github.io","purpose":"Catalog/loader implementation reference","status":"public source confirmed"}
+  ],
+  "additionalRepositories": [
+    {"name":"Night Crossing","url":"https://github.com/saichaudhry/crossy-road-project","playUrl":"https://saichaudhry.github.io/crossy-road-project/","historicStatus":"User confirmed working in prior desktop testing; Web Edition integration not yet verified"},
+    {"name":"Saurabh's Sprint","url":"https://github.com/Saurabh2005695/Saurabh-s-Sprint-","playUrl":"https://lucent-lollipop-71a903.netlify.app/","historicStatus":"User confirmed working in prior desktop testing; Web Edition integration not yet verified"},
+    {"name":"HexGL","url":"https://github.com/BKcore/HexGL","historicStatus":"public repository confirmed; integration untested"},
+    {"name":"Chrome Dino","url":"https://github.com/wayou/t-rex-runner","historicStatus":"public repository confirmed; integration untested"},
+    {"name":"Shapez","url":"https://github.com/tobspr-games/shapez.io","historicStatus":"public repository confirmed; may require build; integration untested"},
+    {"name":"Sandspiel","url":"https://github.com/MaxBittker/sandspiel","historicStatus":"public repository confirmed; may require build and license review; integration untested"},
+    {"name":"Mindustry","url":"https://github.com/Anuken/Mindustry","webPort":"https://github.com/khoichon/mindustry-web","historicStatus":"public repository confirmed; browser port experimental; integration untested"}
+  ],
+  "historicalFileHints": [
+    {"game":"Crossy Road","repo":"https://github.com/gn-math/html","file":"24-fix2.html","status":"Filename recovered from older conversation, mapping and current operation require validation"},
+    {"game":"1v1.LOL","repo":"https://github.com/gn-math/html","file":"58-fix2.html","status":"Filename recovered from older conversation, mapping and current operation require validation"}
+  ],
+  "previouslyTestedWebEditionGames": [
+    {"name":"OvO","status":"Historically Chromium-verified on Web Edition Nov 1; must re-test current recovered build"},
+    {"name":"Run 3","status":"Historically Chromium-verified on Web Edition Nov 1; must re-test current recovered build"},
+    {"name":"Cookie Clicker","status":"Historically Chromium-verified on Web Edition Nov 1; must re-test current recovered build"},
+    {"name":"Crossy Road","status":"Historically Chromium-verified on Web Edition Nov 1; desktop hosted embed subsequently had failures; use source-specific tests"}
+  ],
+  "priorityGameCandidates": [
+    "Drive Mad", "Retro Bowl", "Retro Bowl College", "Moto X3M", "Smash Karts",
+    "Geometry Dash", "Five Nights at Freddy's", "Temple Run 2", "Slope", "Night Crossing", "Saurabh's Sprint",
+    "Stickman Hook", "Friday Night Funkin'", "Jetpack Joyride", "Paper.io 2", "Basketball Stars",
+    "Basket Random", "Soccer Random", "Tunnel Rush", "Run 3", "Cookie Clicker", "OvO", "Duck Life",
+    "Fruit Ninja", "Fireboy and Watergirl", "Monkey Mart", "Ragdoll Hit", "HexGL", "Chrome Dino",
+    "Shapez", "Sandspiel"
+  ],
+  "policy": "Only present a game as playable after real interactive gameplay test inside recovered PoxeyX1 Web Edition. Track source/licensing/embed permissions. Never invent direct game URLs or force embed where prohibited."
+}

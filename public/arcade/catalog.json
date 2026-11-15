@@ -1,0 +1,257 @@
+[
+  {
+    "id": "moto-x3m",
+    "name": "Moto X3M",
+    "category": "Racing",
+    "url": "https://storage.y8.com/y8-studio/html5/madpuffers/MotoX3M_1_new/?key=2365427&ratio_tolerant=true&value=87599",
+    "source": "https://www.y8.com/games/moto_x3m",
+    "controls": "Arrow keys to accelerate, brake and balance; Space to restart",
+    "mobile": "Unverified",
+    "rights": "Publisher-hosted game frame; no third-party game files redistributed; publisher SDK and advertising retained",
+    "type": "hosted",
+    "verified": true,
+    "featured": true,
+    "cover": "/arcade/art/moto-x3m-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "geometry-dash",
+    "name": "Geometry Dash — Official Demo",
+    "category": "Platformer",
+    "url": "https://geometrydash.com/game/index.html",
+    "controls": "Space / click / tap to jump",
+    "source": "https://geometrydash.com/",
+    "mobile": "Unverified",
+    "rights": "Publisher-hosted; no game files redistributed",
+    "type": "hosted",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/geometry-dash-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "hexgl",
+    "name": "HexGL",
+    "category": "Racing",
+    "url": "https://hexgl.bkcore.com/play/",
+    "controls": "Arrow keys to steer; choose keyboard controls",
+    "source": "https://github.com/BKcore/HexGL",
+    "mobile": "Unverified",
+    "rights": "Publisher-hosted; no game files redistributed",
+    "type": "hosted",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/hexgl-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "night-crossing",
+    "name": "Night Crossing",
+    "category": "Arcade",
+    "url": "https://saichaudhry.github.io/crossy-road-project/",
+    "controls": "Arrow keys / WASD; on-screen direction buttons",
+    "source": "https://github.com/saichaudhry/crossy-road-project",
+    "mobile": "Unverified",
+    "rights": "Publisher-hosted; no game files redistributed",
+    "type": "hosted",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/night-crossing-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "sprint",
+    "name": "Saurabh’s Sprint",
+    "category": "Runner",
+    "url": "/arcade/games/sprint/index.html",
+    "controls": "Arrow keys / WASD; swipe on supported touchscreens",
+    "source": "https://github.com/Saurabh2005695/Saurabh-s-Sprint-",
+    "mobile": "Unverified",
+    "rights": "MIT repository and Three.js MIT notices retained; isolated local adaptation",
+    "type": "local",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/sprint-cover.svg",
+    "offline": false,
+    "saves": "Bounded per-game local save",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "dino",
+    "name": "Chrome Dino",
+    "category": "Arcade",
+    "url": "/arcade/games/dino/index.html",
+    "controls": "Space / Up to jump, Down to duck; tap on touchscreens",
+    "source": "https://github.com/wayou/t-rex-runner",
+    "mobile": "Unverified",
+    "rights": "BSD-3-Clause; bundled license and copyright retained",
+    "type": "local",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/dino-cover.svg",
+    "offline": false,
+    "saves": "Session score",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "basketball-stars",
+    "name": "Basketball Stars",
+    "category": "Sports",
+    "url": "https://storage.y8.com/y8-studio/html5/madpuffers/Basketball_2019_new/?key=2365427&ratio_tolerant=true&value=167031",
+    "source": "https://www.y8.com/games/basketball_stars",
+    "controls": "WASD / arrows; X/L to shoot or steal; controls shown by the game",
+    "mobile": "Awaiting User Gameplay Test",
+    "rights": "Publisher-hosted; no game files redistributed; required SDK and publisher UI retained",
+    "type": "hosted",
+    "verified": false,
+    "featured": false,
+    "cover": "/arcade/art/basketball-stars-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "unverified",
+      "currentUserTesting": "pending",
+      "launch": "verified-stage2",
+      "launchCoverage": "Publisher game canvas/title or Play screen rendered inside isolated player; detailed gameplay not tested."
+    },
+    "releaseStatus": "awaiting-user-gameplay"
+  },
+  {
+    "id": "duck-life",
+    "name": "Duck Life",
+    "category": "Training",
+    "url": "https://www.wix.games/uploads/unity/game-ducklife1/index.html?wg_embed_bridge=ads-debug-2026-04-24-1&wg_ads_enabled=1",
+    "source": "https://www.wix.games/ducklife1",
+    "controls": "Follow the publisher’s training controls; keyboard required",
+    "mobile": "Awaiting User Gameplay Test",
+    "rights": "Publisher-hosted; no game files redistributed; required SDK and publisher UI retained",
+    "type": "hosted",
+    "verified": false,
+    "featured": false,
+    "cover": "/arcade/art/duck-life-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "unverified",
+      "currentUserTesting": "pending",
+      "launch": "verified-stage2",
+      "launchCoverage": "Publisher game canvas/title or Play screen rendered inside isolated player; detailed gameplay not tested."
+    },
+    "viewport": {
+      "width": 800,
+      "height": 600
+    },
+    "releaseStatus": "awaiting-user-gameplay"
+  },
+  {
+    "id": "basket-random",
+    "name": "Basket Random",
+    "category": "Sports",
+    "url": "https://www.twoplayergames.org/embed/basket-random",
+    "source": "https://www.twoplayergames.org/game/basket-random",
+    "controls": "W / Up to jump and throw; touch controls where provided",
+    "mobile": "Awaiting User Gameplay Test",
+    "rights": "Publisher-hosted; no game files redistributed; required SDK and publisher UI retained",
+    "type": "hosted",
+    "verified": false,
+    "featured": false,
+    "cover": "/arcade/art/basket-random-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "unverified",
+      "currentUserTesting": "pending",
+      "launch": "verified-stage2",
+      "replacesBlockedSource": "https://www.minijuegos.com/embed/basket-random",
+      "launchCoverage": "Publisher game canvas/title or Play screen rendered inside isolated player; detailed gameplay not tested."
+    },
+    "releaseStatus": "awaiting-user-gameplay"
+  },
+  {
+    "id": "duck-life-2",
+    "name": "Duck Life 2: World Championship",
+    "category": "Training",
+    "url": "https://www.wix.games/uploads/unity/game-ducklife2/index.html?wg_embed_bridge=ads-debug-2026-04-24-1&wg_ads_enabled=1",
+    "source": "https://www.wix.games/ducklife2",
+    "controls": "Follow the publisher’s training controls; keyboard required",
+    "mobile": "Awaiting User Gameplay Test",
+    "rights": "Publisher-hosted; no game files redistributed; required SDK and publisher UI retained",
+    "type": "hosted",
+    "verified": false,
+    "featured": false,
+    "cover": "/arcade/art/duck-life-2-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "unverified",
+      "currentUserTesting": "pending",
+      "launch": "verified-stage2",
+      "launchCoverage": "Publisher game canvas/title or Play screen rendered inside isolated player; detailed gameplay not tested."
+    },
+    "viewport": {
+      "width": 800,
+      "height": 600
+    },
+    "releaseStatus": "awaiting-user-gameplay"
+  },
+  {
+    "id": "tunnel-rush",
+    "name": "Tunnel Rush",
+    "category": "Racing",
+    "url": "/arcade-unity/runtime/tunnel-rush",
+    "source": "https://github.com/wnasmile/LAMAR/tree/bf8ff775baa0b9d6e530315b2553db29093bca5a/tunnel-rush",
+    "controls": "Left / right arrows to steer; follow the game’s start and restart instructions. Click the game for keyboard focus.",
+    "mobile": "Unverified — keyboard recommended",
+    "rights": "Private local integration. Owner-reported game permissions; publisher redistribution terms not independently verified. No public deployment.",
+    "type": "unity-local",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/tunnel-rush-cover.svg",
+    "offline": false,
+    "saves": "No persistent game saves in the opaque sandbox",
+    "verification": {
+      "gameplay": "owner-verified",
+      "evidence": "Owner reported “game works” on 2026-11-08 in the isolated local lab.",
+      "launch": "owner-verified-stage81-lab",
+      "coverage": "Owner reported game works in local lab; individual sound/fullscreen/cleanup checks and final integrated layout remain unverified by direct rendered interaction."
+    }
+  }
+]

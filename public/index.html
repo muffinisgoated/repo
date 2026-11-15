@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>PoxeyX1</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <link rel="stylesheet" href="atelier.css">
+  <link rel="stylesheet" href="arcade.css"><link rel="stylesheet" href="onboarding-shell.css"><link rel="stylesheet" href="web-edition.css">
+<link rel="stylesheet" href="recovery.css?v=20261104.2">  <link rel="stylesheet" href="features/features.css">
+<link rel="stylesheet" href="features/settings.css">
+<link rel="stylesheet" href="features/premium.css">
+  <link rel="stylesheet" href="vendor/answers/katex.min.css">
+</head>
+<body class="web-edition" data-theme="black" data-tab-layout="horizontal">
+  <!-- Vector icons are shipped locally. No external fonts, trackers or assets. -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9" r="1.5"/><path d="m4 17 5-4 4 3 4-5 4 4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-forward" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-reload" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.2M20 4v7h-7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2" fill="var(--panel)"/><circle cx="15" cy="17" r="2" fill="var(--panel)"/></symbol>
+    <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9H3z"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 2 2.1 7.9L22 12l-7.9 2.1L12 22l-2.1-7.9L2 12l7.9-2.1z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m4 12 16-8-5 16-3-7-8-1z"/><path d="m12 13 8-9"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 8 4v6c0 5-3 8-8 10-5-2-8-5-8-10V6z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 4h16v13H9l-5 4z"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 4h6M6 7l1 14h10l1-14M10 10v7m4-7v7"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14A8 8 0 0 1 10 4 8 8 0 1 0 20 14Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M13 5h6v6m0-6-9 9"/><path d="M19 14v5H5V5h5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5c3-2 6-1 8 0 2-1 5-2 8 0v14c-3-2-6-1-8 0-2-1-5-2-8 0zM12 5v14"/></symbol>
+  </svg>
+
+  <div id="app" class="app-shell">
+    <header class="chrome-head">
+      <div class="chrome-topline">
+        <div class="brand" title="PoxeyX1"><img class="brand-logo" src="assets/logo-icon.png" alt="PoxeyX1 logo"></div>
+        <div class="tabstrip" id="horizontal-tabs" role="tablist" aria-label="Open tabs"></div>
+        <button class="tab-overflow-trigger desktop-overflow" id="tab-overflow-trigger" type="button" aria-label="More open tabs" aria-expanded="false" title="More tabs" hidden>+0 <svg><use href="#i-chevron"/></svg></button>
+        <div class="tab-overflow-menu" id="tab-overflow-menu" role="menu" aria-label="Other open tabs" hidden></div>
+        <button class="icon-btn add-tab desktop-add" id="top-new-tab" title="New tab (⌘/Ctrl+T)" aria-label="New tab"><svg><use href="#i-plus"/></svg></button>
+        
+      </div>
+      <div class="chrome-navbar">
+        <div class="nav-arrows">
+          <button class="icon-btn" id="nav-back" aria-label="Back" title="Back"><svg><use href="#i-back"/></svg></button>
+          <button class="icon-btn" id="nav-forward" aria-label="Forward" title="Forward"><svg><use href="#i-forward"/></svg></button>
+          <button class="icon-btn" id="nav-reload" aria-label="Reload" title="Reload"><svg><use href="#i-reload"/></svg></button>
+        </div>
+        <button class="top-text-button arcade-entry" id="btn-arcade" aria-label="Games" title="Games"><svg class="gamepad-glyph" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10c2 0 3 2 3.5 4l1 6c.4 3-2 4-4 1l-1-2h-9l-1 2c-2 3-4.4 2-4-1l1-6C4 9 5 7 7 7Z"/><path d="M7 10v5m-2.5-2.5h5"/><circle cx="16" cy="11" r=".7"/><circle cx="18.5" cy="13.5" r=".7"/></svg><span>Games</span></button>
+        <div class="omnibox"><svg><use href="#i-search"/></svg><input id="address" type="text" spellcheck="false" autocomplete="off" placeholder="Search the web or enter an address" aria-label="Address and search"><kbd>⌘ L</kbd></div>
+        <div class="nav-actions">
+          <button class="ai-install-indicator" id="ai-install-indicator" type="button" hidden aria-live="polite" title="AI setup progress"></button>
+          <button class="icon-btn" id="btn-bookmark" aria-label="Bookmark this page" title="Bookmark"><svg><use href="#i-bookmark"/></svg></button>
+          <button class="icon-btn" id="btn-history" aria-label="History" title="History"><svg><use href="#i-clock"/></svg></button>
+          <button class="icon-btn" id="btn-library" aria-label="Bookmarks and history" title="Bookmarks and history"><svg><use href="#i-book"/></svg></button><span class="nav-divider"></span>
+          <button class="pill-ai" id="btn-ai" aria-label="Toggle Conversations sidebar"><svg><use href="#i-sparkle"/></svg><span>Conversations</span></button>
+          <button class="icon-btn" id="btn-settings" aria-label="Settings" title="Settings"><svg><use href="#i-settings"/></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <aside id="quick-popover" class="quick-popover" hidden aria-label="Browser tools"><header><strong id="quick-popover-title"></strong><button type="button" id="quick-popover-close" aria-label="Close popup">×</button></header><div id="quick-popover-body" class="quick-popover-body"></div></aside>
+    <div class="app-main">
+      <aside class="vertical-rail" aria-label="Tabs sidebar"><div class="rail-head"><span>TABS</span><button class="icon-btn" id="side-new-tab" title="New tab" aria-label="New tab"><svg><use href="#i-plus"/></svg></button></div><div id="vertical-tabs" class="vertical-tabs" role="tablist"></div><div class="rail-footer"><button class="rail-action" id="rail-open-workspace"><svg><use href="#i-sparkle"/></svg>AI Workspace</button></div></aside>
+      <main class="main-stage">
+        <section class="browser-stage" id="browser-container" aria-label="Web browser"></section>
+        <section id="arcade" class="arcade" aria-label="Poxey Arcade" hidden></section>
+        <aside class="drawer" id="utility-drawer" hidden><div class="drawer-head"><div><div class="eyebrow" id="drawer-eyebrow">BROWSER</div><h2 id="drawer-title">Settings</h2></div><button class="icon-btn" id="drawer-close" aria-label="Close panel"><svg><use href="#i-x"/></svg></button></div><div class="drawer-content" id="drawer-content"></div></aside>
+        <section id="ai-panel" class="ai-panel" aria-label="AI assistant" hidden>
+          <div class="ai-resize-handle" id="ai-resize" title="Drag to resize AI panel"></div>
+          <div class="ai-panel-header"><div class="ai-identity"><div class="ai-glyph"><svg><use href="#i-sparkle"/></svg></div><div><div class="ai-name">AI Assistant</div></div></div><div class="ai-header-actions"><button class="icon-btn" id="ai-history" aria-label="AI conversations" title="Conversations"><svg><use href="#i-clock"/></svg></button><button class="icon-btn" id="ai-expand" aria-label="Expand AI workspace" title="Expand / collapse"><svg><use href="#i-panel"/></svg></button><button class="icon-btn" id="ai-close" aria-label="Close AI"><svg><use href="#i-x"/></svg></button></div></div>
+          <div class="ai-mode-row"><button id="ai-reader-mode" class="small-pill active-pill" type="button"><svg><use href="#i-message"/></svg>Chat</button><button id="ai-agent-mode" class="small-pill muted-pill" type="button"><svg><use href="#i-sparkle"/></svg>Agent</button><button type="button" class="ai-model-status" id="ai-model-label" title="Choose an AI model">Lite AI</button></div>
+          <div id="ai-setup-hint" class="ai-setup-hint" hidden role="status"></div>
+          <div id="ai-agent-activity" class="ai-agent-activity" hidden><div class="activity-heading"><span>AGENT ACTIVITY</span><div><button id="agent-pause" type="button">Pause</button><button id="agent-stop" type="button">Stop</button></div></div><div id="agent-steps" class="agent-steps"></div></div><div id="ai-chats" class="ai-chats-drawer" hidden><div class="chat-list-head"><span>YOUR CONVERSATIONS</span><button class="icon-btn" id="chat-new" title="New conversation"><svg><use href="#i-plus"/></svg></button></div><div id="ai-chat-list"></div></div>
+          <div class="ai-content"><div id="ai-messages" class="ai-messages"></div><div class="ai-composer-section"><div class="ai-page-status" id="ai-page-status" role="status" hidden></div><div class="composer-box"><textarea id="ai-input" rows="2" maxlength="5000" placeholder="Ask anything about this page or the web…" aria-label="AI message"></textarea><button id="ai-send" aria-label="Send AI message" title="Send message"><svg><use href="#i-send"/></svg></button></div><div class="composer-extras"><button id="ai-attach-file" class="extra-link" title="Attach a text document">+ Attach file</button><button id="ai-mic" class="extra-link" title="Voice input">Voice input</button><button id="ai-clear-attachment" class="extra-link" hidden>Remove file</button></div><div class="composer-foot">AI may make mistakes. Verify important details.</div></div></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="status-bar"><span id="status-left"><span class="status-dot"></span>Ready</span><span id="status-right" hidden></span></div>
+  </div>
+
+  <div class="onboarding-backdrop" id="onboarding" hidden role="dialog" aria-modal="true" aria-labelledby="setup-heading">
+    <div class="onboarding-card">
+      <div class="onboarding-top"><div class="brand onboarding-brand"><img class="brand-logo" src="assets/logo-icon.png" alt="PoxeyX1 logo"><span class="brand-word">Poxey</span></div><span class="setup-meta" id="setup-meta">STEP 1 OF 5</span></div>
+      <div class="setup-progress" id="setup-progress"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="setup-content" id="setup-content"></div>
+      <div class="setup-bottom"><span>Make it yours. You can change everything later.</span><div><button class="btn-outline" id="setup-back">Back</button><button class="btn-solid" id="setup-next">Continue <svg><use href="#i-forward"/></svg></button></div></div>
+    </div>
+  </div>
+
+  <div class="toast-region" id="toast-region" aria-live="polite"></div>
+  <script src="runtime-config.js"></script><script type="module" src="web-edition.js?v=20261107.3"></script>
+</body>
+</html>

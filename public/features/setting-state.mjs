@@ -1,0 +1,5 @@
+import {revealSetting} from './settings-scroll.mjs';
+// Presentation only: never toggles a control or changes stored consent.
+export function focusSetting(root,id){const input=root.querySelector('#'+id);if(!input)return;revealSetting(root,input,{center:true});input.focus({preventScroll:true});}
+export function settingState(input,state,{hint,actionLabel,target,root}={}){const row=input.closest('.settings-row');if(!row)return;row.dataset.state=state;let badge=row.querySelector('.settings-state');if(!badge){badge=row.ownerDocument.createElement('span');badge.className='settings-state';badge.setAttribute('aria-hidden','true');input.closest('label').append(badge);}badge.textContent={unavailable:'Paused',on:'On',off:'Off',consent:'Consent only'}[state]||state;
+ let action=row.querySelector('.settings-dependency-action');if(!action&&actionLabel){action=row.ownerDocument.createElement('button');action.type='button';action.className='settings-dependency-action';(hint||input.closest('label')).after(action);}if(action){action.hidden=!actionLabel;action.textContent=actionLabel||'';action.onclick=actionLabel?()=>focusSetting(root,target):null;}}

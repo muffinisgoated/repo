@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Cosmic Drift",
+    "src": "onboarding/wallpapers/cosmic-drift.svg"
+  },
+  {
+    "name": "Alpine Dawn",
+    "src": "onboarding/wallpapers/alpine-dawn.svg"
+  },
+  {
+    "name": "Tokyo Afterglow",
+    "src": "onboarding/wallpapers/tokyo-afterglow.svg"
+  },
+  {
+    "name": "Neon Arcade",
+    "src": "onboarding/wallpapers/neon-arcade.svg"
+  },
+  {
+    "name": "Silk Ribbons",
+    "src": "onboarding/wallpapers/aurora.svg"
+  },
+  {
+    "name": "Rainforest Cascade",
+    "src": "onboarding/wallpapers/rainforest-cascade.jpg"
+  },
+  {
+    "name": "Lunar Earthrise",
+    "src": "onboarding/wallpapers/lunar-earthrise.jpg"
+  },
+  {
+    "name": "Lantern Lane",
+    "src": "onboarding/wallpapers/lantern-lane.jpg"
+  },
+  {
+    "name": "Seaside Railway",
+    "src": "onboarding/wallpapers/seaside-railway.jpg"
+  },
+  {
+    "name": "Underwater Light",
+    "src": "onboarding/wallpapers/underwater-light.jpg"
+  },
+  {
+    "name": "Desert Dunes",
+    "src": "onboarding/wallpapers/desert-dunes.jpg"
+  },
+  {
+    "name": "Northern Lights",
+    "src": "onboarding/wallpapers/northern-lights.jpg"
+  },
+  {
+    "name": "Fern & Dew",
+    "src": "onboarding/wallpapers/fern-dew.jpg"
+  },
+  {
+    "name": "Paper Folds",
+    "src": "onboarding/wallpapers/paper-folds.svg"
+  },
+  {
+    "name": "Ink Circle",
+    "src": "onboarding/wallpapers/ink-circle.svg"
+  },
+  {
+    "name": "Balance",
+    "src": "onboarding/wallpapers/balance.svg"
+  }
+]

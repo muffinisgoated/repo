@@ -1,0 +1,66 @@
+{
+  "server.mjs": [
+    {
+      "current": "  function serve(isProxy,gameHandler=null) {return http.createServer((req,res)=>{\n",
+      "previous": "  function serve(isProxy) {return http.createServer((req,res)=>{\n"
+    },
+    {
+      "current": "    const expected=gameHandler?new URL(gameHandler.origin).host:isProxy?`localhost:${proxyPort}`:`127.0.0.1:${port}`;\n    const reporting=!isProxy&&!gameHandler&&req.url==='/api/session/activity';\n    const visitorRoute=!isProxy&&!gameHandler&&['/api/analytics/summary','/api/analytics/visit'].includes(req.url);\n    const aiRoute=!isProxy&&!gameHandler&&['/api/assistant/capabilities','/api/assistant/session','/api/assistant/chat','/api/assistant/usage'].includes(req.url);\n",
+      "previous": "    const expected=isProxy?`localhost:${proxyPort}`:`127.0.0.1:${port}`;\n    const reporting=!isProxy&&req.url==='/api/session/activity';\n    const visitorRoute=!isProxy&&['/api/analytics/summary','/api/analytics/visit'].includes(req.url);\n    const aiRoute=!isProxy&&['/api/assistant/capabilities','/api/assistant/session','/api/assistant/chat','/api/assistant/usage'].includes(req.url);\n"
+    },
+    {
+      "current": "    if(gameHandler){gameHandler.handle(req,res);return;}\n",
+      "previous": ""
+    },
+    {
+      "current": "  if(port===8800&&proxyPort===8801&&options.gameOrigins!==false)for(const {game,handler} of betaArcade.origins){const server=serve(false,handler);server.on('error',()=>{game.disabled=true;game.beta.originUnavailable=true;arcade.mtime=null;console.error('Game origin unavailable: '+game.id);});servers.push(server);server.listen(Number(new URL(handler.origin).port),'127.0.0.1');}\n",
+      "previous": ""
+    }
+  ],
+  "proxy-public/arcade/host.mjs": [
+    {
+      "current": " const isolated=beta&&game.runtimeOrigin===`http://poxey-game-${Number(game.id.slice(3))}.localhost:${10000+Number(game.id.slice(3))}`;if(beta&&game.runtimeOrigin&&!isolated)throw Error('Invalid game origin');\n const url=new URL(isolated?'/index.beta.html':game.url,isolated?game.runtimeOrigin:location.origin);if(game.type==='hosted'&&url.protocol!=='https:')throw Error('HTTPS required');\n",
+      "previous": " const url=new URL(game.url,location.origin);if(game.type==='hosted'&&url.protocol!=='https:')throw Error('HTTPS required');\n"
+    },
+    {
+      "current": " child.setAttribute('sandbox',isolated?'allow-scripts allow-same-origin allow-pointer-lock':(game.type==='local'||game.type==='unity-local'||beta)?'allow-scripts allow-pointer-lock':'allow-scripts allow-same-origin allow-pointer-lock allow-forms');\n",
+      "previous": " child.setAttribute('sandbox',(game.type==='local'||game.type==='unity-local'||beta)?'allow-scripts allow-pointer-lock':'allow-scripts allow-same-origin allow-pointer-lock allow-forms');\n"
+    },
+    {
+      "current": " if(beta){url.searchParams.set('token',token);const ready=await fetch(url.href,{method:'HEAD',cache:'no-store'});if(!ready.ok)throw Error('The local Beta package is unavailable.');addEventListener('message',e=>{if(e.source!==child?.contentWindow||e.origin!==(isolated?game.runtimeOrigin:'null')||e.data?.betaGame!==true||e.data.token!==token)return;if(e.data.event==='error'){betaFailed=true;clearTimeout(timer);message.hidden=false;message.textContent='Beta runtime error. Retry or return to Library.';send('error',{beta:true,detail:typeof e.data.detail==='string'?e.data.detail.slice(0,700):''});}});child.src=url.href;}\n",
+      "previous": " if(beta){url.searchParams.set('token',token);const ready=await fetch(url.href,{method:'HEAD',cache:'no-store'});if(!ready.ok)throw Error('The local Beta package is unavailable.');addEventListener('message',e=>{if(e.source!==child?.contentWindow||e.origin!=='null'||e.data?.betaGame!==true||e.data.token!==token)return;if(e.data.event==='error'){betaFailed=true;clearTimeout(timer);message.hidden=false;message.textContent='Beta runtime error. Retry or return to Library.';send('error',{beta:true,detail:typeof e.data.detail==='string'?e.data.detail.slice(0,220):''});}});child.src=url.href;}\n"
+    }
+  ],
+  "arcade-telemetry/monitor.mjs": [
+    {
+      "current": " refreshRegistry(){try{const stat=fs.statSync(this.catalog);if(stat.size>1048576)throw Error();const extraVersion=this.extraGames.map(g=>g.id+':'+(g.disabled===true)).join('|');if(this.registryAvailable&&this.mtime===stat.mtimeMs&&this.extraVersion===extraVersion)return;this.extraVersion=extraVersion;const games=registry([...JSON.parse(fs.readFileSync(this.catalog,'utf8')),...this.extraGames]);this.store?.register(games);this.games=new Map(games.map(g=>[g.id,g]));this.mtime=stat.mtimeMs;this.registryAvailable=true;}catch{this.registryAvailable=false;}}\n",
+      "previous": " refreshRegistry(){try{const stat=fs.statSync(this.catalog);if(stat.size>1048576)throw Error();if(this.registryAvailable&&this.mtime===stat.mtimeMs)return;const games=registry([...JSON.parse(fs.readFileSync(this.catalog,'utf8')),...this.extraGames]);this.store?.register(games);this.games=new Map(games.map(g=>[g.id,g]));this.mtime=stat.mtimeMs;this.registryAvailable=true;}catch{this.registryAvailable=false;}}\n"
+    }
+  ],
+  "public/arcade/ui.mjs": [
+    {
+      "current": " let destroyed=false,frame=null,token='',timer=null,playerDiagnostics=[],games=[],state,view='Discover',query='',category='All';\n",
+      "previous": " let destroyed=false,frame=null,token='',timer=null,games=[],state,view='Discover',query='',category='All';\n"
+    },
+    {
+      "current": "  if(!retry)playerDiagnostics=[];\n",
+      "previous": ""
+    },
+    {
+      "current": "  area.querySelector('#arcade-info').onclick=()=>{const d=document.createElement('dialog');d.className='arcade-license';for(const text of [game.name,game.rights,game.source,'Saves: '+game.saves,...(game.type==='beta-local'?['Beta: locally packaged, not gameplay verified. Private local testing only; no public redistribution approval.']:[]),...(game.releaseStatus==='awaiting-user-gameplay'?['Awaiting User Gameplay Test']:[])]){const p=document.createElement('p');p.textContent=text;d.append(p);}const b=document.createElement('button');b.className='arcade-player-control';b.textContent='Close';b.onclick=()=>d.close();d.append(b);if(game.type==='beta-local'){const details=document.createElement('details'),summary=document.createElement('summary'),pre=document.createElement('pre');summary.textContent='Local diagnostics';pre.textContent=playerDiagnostics.length?JSON.stringify(playerDiagnostics,null,2):'No runtime errors received. This does not verify gameplay.';pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;max-height:240px;overflow:auto';details.append(summary,pre);d.append(details);const exportButton=document.createElement('button');exportButton.className='arcade-player-control';exportButton.textContent='Save diagnostics';exportButton.onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify({game:game.id,errors:playerDiagnostics,scope:'Local runtime diagnostics; not gameplay verification'},null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='poxey-game-diagnostics.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};d.append(exportButton);}d.onclose=()=>d.remove();area.append(d);d.showModal();};\n",
+      "previous": "  area.querySelector('#arcade-info').onclick=()=>{const d=document.createElement('dialog');d.className='arcade-license';for(const text of [game.name,game.rights,game.source,'Saves: '+game.saves,...(game.type==='beta-local'?['Beta: locally packaged, not gameplay verified. Private local testing only; no public redistribution approval.']:[]),...(game.releaseStatus==='awaiting-user-gameplay'?['Awaiting User Gameplay Test']:[])]){const p=document.createElement('p');p.textContent=text;d.append(p);}const b=document.createElement('button');b.className='arcade-player-control';b.textContent='Close';b.onclick=()=>d.close();d.append(b);d.onclose=()=>d.remove();area.append(d);d.showModal();};\n"
+    },
+    {
+      "current": " function receive(event){if(!frame||event.origin!==window.POXEY_RUNTIME.proxyOrigin||event.source!==frame.contentWindow||event.data?.token!==token||event.data?.arcade!==true)return;if(event.data.type==='error'&&event.data.beta===true){playerDiagnostics.push({event:'runtime-error',at:new Date().toISOString(),detail:typeof event.data.detail==='string'?event.data.detail.slice(0,700):''});if(playerDiagnostics.length>50)playerDiagnostics.shift();}if(event.data.type==='save-persisted'){const saved=root.querySelector('.arcade-save-status');if(saved)saved.textContent='Progress saved on this device';return;}const e=root.querySelector('#arcade-status');if(!e)return;if(event.data.type==='document-loaded'){clearTimeout(timer);e.textContent='';e.hidden=true;}else{e.hidden=false;e.textContent=event.data.type==='error'&&event.data.beta===true?'Beta game could not start: '+String(event.data.detail||'A local dependency failed.').slice(0,220)+'. Retry or return to Library.':event.data.type==='slow'?'Still loading? Retry or return to the Library.':'The game could not be opened. Retry or return to the Library.';}}\n",
+      "previous": " function receive(event){if(!frame||event.origin!==window.POXEY_RUNTIME.proxyOrigin||event.source!==frame.contentWindow||event.data?.token!==token||event.data?.arcade!==true)return;if(event.data.type==='save-persisted'){const saved=root.querySelector('.arcade-save-status');if(saved)saved.textContent='Progress saved on this device';return;}const e=root.querySelector('#arcade-status');if(!e)return;if(event.data.type==='document-loaded'){clearTimeout(timer);e.textContent='';e.hidden=true;}else{e.hidden=false;e.textContent=event.data.type==='error'&&event.data.beta===true?'Beta game could not start: '+String(event.data.detail||'A local dependency failed.').slice(0,220)+'. Retry or return to Library.':event.data.type==='slow'?'Still loading? Retry or return to the Library.':'The game could not be opened. Retry or return to the Library.';}}\n"
+    },
+    {
+      "current": "  if(games.some(g=>g.type==='beta-local'&&isLibraryEntry(g))){const notice=document.createElement('p');notice.className='arcade-beta-notice';notice.textContent=games.filter(g=>g.type==='beta-local'&&isLibraryEntry(g)).length+' Beta games \u00b7 locally packaged for this private preview; gameplay and mobile support are unverified.';root.querySelector('.arcade-library').prepend(notice);}\n",
+      "previous": "  if(games.some(g=>g.type==='beta-local')){const notice=document.createElement('p');notice.className='arcade-beta-notice';notice.textContent=games.filter(g=>g.type==='beta-local').length+' Beta games \u00b7 locally packaged for this private preview; gameplay and mobile support are unverified.';root.querySelector('.arcade-library').prepend(notice);}\n"
+    },
+    {
+      "current": "  for(const name of ['Discover',...(games.some(g=>g.type==='beta-local'&&isLibraryEntry(g))?['Beta games']:[]),'Favorites','Recently played']){const b=document.createElement('button');b.className='arcade-nav-item'+(name===view?' selected':'');b.textContent=name;b.onclick=()=>{view=name;if(name==='Beta games'){category='All';query='';root.querySelector('.arcade-search').value='';}root.querySelectorAll('.arcade-nav-item').forEach(x=>x.classList.toggle('selected',x===b));renderCards();};root.querySelector('#arcade-views').append(b);}\n  for(const name of ['All',...(games.some(g=>g.type==='beta-local'&&isLibraryEntry(g))?['Beta']:[]),...new Set(games.filter(g=>qa||isLibraryEntry(g)).map(g=>g.category))]){const b=document.createElement('button');b.textContent=name;b.onclick=()=>{category=name;\n",
+      "previous": "  for(const name of ['Discover',...(games.some(g=>g.type==='beta-local')?['Beta games']:[]),'Favorites','Recently played']){const b=document.createElement('button');b.className='arcade-nav-item'+(name===view?' selected':'');b.textContent=name;b.onclick=()=>{view=name;if(name==='Beta games'){category='All';query='';root.querySelector('.arcade-search').value='';}root.querySelectorAll('.arcade-nav-item').forEach(x=>x.classList.toggle('selected',x===b));renderCards();};root.querySelector('#arcade-views').append(b);}\n  for(const name of ['All',...(games.some(g=>g.type==='beta-local')?['Beta']:[]),...new Set(games.filter(g=>qa||isLibraryEntry(g)).map(g=>g.category))]){const b=document.createElement('button');b.textContent=name;b.onclick=()=>{category=name;\n"
+    }
+  ]
+}

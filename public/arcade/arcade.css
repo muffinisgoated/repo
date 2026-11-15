@@ -1,0 +1,23 @@
+.arcade-discover{display:flex;width:100%;height:100%;min-width:0}.arcade-nav-item{display:block;width:100%}.arcade-search{max-width:100%;width:330px}.arcade-hero-word{font-size:clamp(45px,9vw,130px);font-weight:850;letter-spacing:-8px;opacity:.14;transform:rotate(-8deg)}.arcade-quick{overflow:auto;flex-wrap:wrap}.arcade-quick button{flex:0 0 auto;white-space:nowrap}.arcade-quick button.selected{border-color:#ac9dff;color:var(--ar-text)}.arcade-card-launch{border:0;width:100%;height:100%;padding:0;background:linear-gradient(145deg,#494163,#242337);color:#f5f1ff;cursor:pointer}.arcade-card-launch img{width:100%;height:100%;object-fit:cover;display:block}.arcade-lettering{display:grid;place-items:center;padding:15px;font-size:21px;font-weight:800;letter-spacing:-.6px;line-height:1.15}.arcade-card:nth-child(3n+2) .arcade-card-launch{background:linear-gradient(130deg,#254957,#202b3f)}.arcade-card:nth-child(3n+3) .arcade-card-launch{background:linear-gradient(130deg,#6b4841,#35233c)}#game-area{width:100%;height:100%;min-width:0}.arcade-game-stage{overflow:hidden}.arcade-host-frame{position:absolute;inset:0;width:100%;height:100%;border:0}.arcade-connection{position:absolute;top:8px;left:8px;right:8px;z-index:3;padding:12px;color:white;background:#171924;font-size:12px;pointer-events:none}.arcade-connection[hidden]{display:none}.arcade-player-foot{flex-wrap:wrap}.arcade-player-bar{flex-wrap:wrap;gap:10px}.arcade-qa-notice{font-size:11px;color:var(--ar-muted)}#game-area:fullscreen{background:#11131e}.arcade .game-panel{height:100%;overflow:auto;padding:25px}.arcade .game-panel canvas{max-width:100%;height:auto}.arcade .game-panel .game-pad{touch-action:manipulation}.arcade .game-panel{background:var(--ar-bg)}
+@media(max-width:700px){.arcade-discover{flex-direction:column}.arcade-nav{width:100%;flex:0 0 auto;padding:12px;overflow:visible;display:grid;grid-template-columns:1fr auto;gap:8px}.arcade-logo{margin:0;font-size:15px}.arcade-nav-label,.arcade-nav-foot{display:none}.arcade-back{grid-column:2;grid-row:1;border:0;padding:6px;font-size:10px!important}#arcade-views{grid-column:1/-1;display:flex;gap:4px}.arcade-nav-item{width:auto;padding:8px 10px}.arcade-library{padding:16px;min-height:0}.arcade-library-top{margin-bottom:14px}.arcade-search{width:100%}.arcade-hero{min-height:170px;padding:22px}.arcade h1{font-size:30px}.arcade-hero-word{display:none}.arcade-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}.arcade-player-bar{padding:10px}.arcade-player-bar strong{font-size:12px;flex:1}.arcade-player-label{display:none}.arcade-player-foot{font-size:9px;line-height:1.5}.arcade-quick{margin:14px 0;gap:6px}.arcade-quick button{padding:9px 12px}.arcade-lettering{font-size:19px}}
+
+@media(max-width:700px){.arcade-collage{display:none}}
+@media(max-width:700px){.web-edition #arcade .arcade-nav{display:grid}.web-edition #arcade .arcade-library{padding:16px}}
+.arcade-license p{overflow-wrap:anywhere}.arcade-player-bar strong{overflow-wrap:anywhere}
+/* Whole-pixel player chrome keeps nested game viewports aligned for input. */
+.arcade .arcade-player-back,.arcade .arcade-player-control{line-height:14px}.arcade-player-bar strong{line-height:20px}
+@media(max-width:700px){.arcade-player-bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.arcade-player-bar strong{grid-column:2/-1;overflow-wrap:normal}.arcade-player-bar #arcade-return,.arcade-player-bar #game-exit{grid-column:1}.arcade-player-bar .arcade-player-control{width:100%;padding:8px}}
+
+/* Covers are complete square compositions; never crop publisher logos. */
+.arcade-card-launch img,.arcade-hero-cover img{object-fit:contain}
+.arcade-hero-cover .arcade-lettering{font-size:14px}
+
+/* BEGIN TUNNEL LARGE PLAYER */
+.arcade-unity-player .arcade-player{width:100%;height:100%;min-height:0;display:flex;flex-direction:column}
+.arcade-unity-player .arcade-game-stage{position:relative;flex:1;min-height:240px;width:100%;background:#000}
+.arcade-unity-player .arcade-host-frame{inset:0;width:100%;height:100%;opacity:1;filter:none;transform:none}
+.arcade-unity-player:fullscreen .arcade-game-stage{min-height:0}
+/* END TUNNEL LARGE PLAYER */
+
+/* Private Beta entries share the existing Arcade layout. */
+.arcade-beta-notice{font-size:.85rem;line-height:1.5;color:#aaa;border:1px solid #444;border-radius:10px;padding:10px 14px;overflow-wrap:anywhere}.arcade-card{content-visibility:auto;contain-intrinsic-size:auto 300px}.arcade-player-label{font-size:.75rem;color:#bbb}.arcade-hero-cover img,.arcade-card-launch img{object-fit:contain}

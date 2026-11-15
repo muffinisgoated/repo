@@ -1,0 +1,222 @@
+[
+  {
+    "id": "moto-x3m",
+    "name": "Moto X3M",
+    "category": "Racing",
+    "url": "https://storage.y8.com/y8-studio/html5/madpuffers/MotoX3M_1_new/?key=2365427&ratio_tolerant=true&value=87599",
+    "source": "https://www.y8.com/games/moto_x3m",
+    "controls": "Arrow keys to accelerate, brake and balance; Space to restart",
+    "mobile": "Unverified",
+    "rights": "Publisher-hosted game frame; no third-party game files redistributed; publisher SDK and advertising retained",
+    "type": "hosted",
+    "verified": true,
+    "featured": true,
+    "cover": "/arcade/art/moto-x3m-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "geometry-dash",
+    "name": "Geometry Dash — Official Demo",
+    "category": "Platformer",
+    "url": "https://geometrydash.com/game/index.html",
+    "controls": "Space / click / tap to jump",
+    "source": "https://geometrydash.com/",
+    "mobile": "Unverified",
+    "rights": "Publisher-hosted; no game files redistributed",
+    "type": "hosted",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/geometry-dash-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "hexgl",
+    "name": "HexGL",
+    "category": "Racing",
+    "url": "https://hexgl.bkcore.com/play/",
+    "controls": "Arrow keys to steer; choose keyboard controls",
+    "source": "https://github.com/BKcore/HexGL",
+    "mobile": "Unverified",
+    "rights": "Publisher-hosted; no game files redistributed",
+    "type": "hosted",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/hexgl-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "night-crossing",
+    "name": "Night Crossing",
+    "category": "Arcade",
+    "url": "https://saichaudhry.github.io/crossy-road-project/",
+    "controls": "Arrow keys / WASD; on-screen direction buttons",
+    "source": "https://github.com/saichaudhry/crossy-road-project",
+    "mobile": "Unverified",
+    "rights": "Publisher-hosted; no game files redistributed",
+    "type": "hosted",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/night-crossing-cover.svg",
+    "offline": false,
+    "saves": "Publisher-managed; not guaranteed",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "sprint",
+    "name": "Saurabh’s Sprint",
+    "category": "Runner",
+    "url": "/arcade/games/sprint/index.html",
+    "controls": "Arrow keys / WASD; swipe on supported touchscreens",
+    "source": "https://github.com/Saurabh2005695/Saurabh-s-Sprint-",
+    "mobile": "Unverified",
+    "rights": "MIT repository and Three.js MIT notices retained; isolated local adaptation",
+    "type": "local",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/sprint-cover.svg",
+    "offline": false,
+    "saves": "Bounded per-game local save",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "dino",
+    "name": "Chrome Dino",
+    "category": "Arcade",
+    "url": "/arcade/games/dino/index.html",
+    "controls": "Space / Up to jump, Down to duck; tap on touchscreens",
+    "source": "https://github.com/wayou/t-rex-runner",
+    "mobile": "Unverified",
+    "rights": "BSD-3-Clause; bundled license and copyright retained",
+    "type": "local",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/dino-cover.svg",
+    "offline": false,
+    "saves": "Session score",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "hextris",
+    "name": "Hextris",
+    "category": "Puzzle",
+    "url": "/arcade/games/hextris/index.html",
+    "source": "https://github.com/Hextris/hextris",
+    "controls": "Left / Right or A / D to rotate the hexagon; touch arrows",
+    "type": "local",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/hextris-cover.svg",
+    "offline": false,
+    "mobile": "Tap left/right side of game; physical touchscreen unverified",
+    "saves": "Bounded local high scores; active runs start fresh",
+    "rights": "GPL-3.0-or-later; full license, authors and corresponding modified source retained",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "snake",
+    "name": "Neon Snake",
+    "category": "Arcade",
+    "url": "",
+    "controls": "Arrow keys / WASD or touch buttons",
+    "source": "Original supplied PoxeyX1 Web Edition",
+    "mobile": "On-screen direction buttons",
+    "rights": "Existing supplied implementation preserved",
+    "type": "builtin",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/snake.svg",
+    "offline": false,
+    "saves": "Session score",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "paperclips",
+    "name": "Universal Paperclips",
+    "category": "Idle",
+    "url": "https://www.decisionproblem.com/paperclips/index2.html",
+    "source": "https://www.decisionproblem.com/paperclips/",
+    "controls": "Click Make Paperclip; Tab / Enter operate buttons",
+    "type": "hosted",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/paperclips-cover.svg",
+    "offline": false,
+    "mobile": "Unverified",
+    "saves": "Publisher-managed; not guaranteed",
+    "rights": "Original developer-hosted release; no game files redistributed",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  },
+  {
+    "id": "dark-room",
+    "name": "A Dark Room",
+    "category": "Adventure",
+    "url": "https://adarkroom.doublespeakgames.com/",
+    "source": "https://github.com/doublespeakgames/adarkroom",
+    "controls": "Mouse / touch actions to light and stoke the fire; arrow keys later in exploration (not yet verified)",
+    "type": "hosted",
+    "verified": true,
+    "featured": false,
+    "cover": "/arcade/art/dark-room-cover.svg",
+    "offline": false,
+    "mobile": "Unverified",
+    "saves": "Publisher-managed; not guaranteed",
+    "rights": "Original developer-hosted release; no game files redistributed",
+    "verification": {
+      "gameplay": "previously-verified",
+      "currentUserTesting": "pending",
+      "evidence": "reports/arcade-expansion/screenshots/",
+      "launch": "verified-stage1"
+    }
+  }
+]

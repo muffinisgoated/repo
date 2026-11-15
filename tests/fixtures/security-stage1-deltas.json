@@ -1,0 +1,12 @@
+{
+  "security.mjs": [
+    {
+      "previous": "import net from 'node:net';\nimport ipaddr from 'ipaddr.js';\nexport function isPublicIP(value) {\n  try {let ip=ipaddr.parse(value);if(ip.kind()==='ipv6'&&ip.isIPv4MappedAddress())ip=ip.toIPv4Address();return ip.range()==='unicast';}catch{return false;}\n}\nexport function validHostname(host) {\n",
+      "current": "import net from 'node:net';\nimport ipaddr from 'ipaddr.js';\nconst globalIPv6=ipaddr.parseCIDR(\"2000::/3\");\nexport function isPublicIP(value) {\n  try {\n    if(!net.isIP(value)||value.includes('%'))return false;\n    let ip=ipaddr.parse(value);\n    if(ip.kind()==='ipv6'&&ip.isIPv4MappedAddress())ip=ip.toIPv4Address();\n    return ip.range()==='unicast'&&(ip.kind()==='ipv4'||ip.match(globalIPv6));\n  }catch{return false;}\n}\nexport function validHostname(host) {\n"
+    },
+    {
+      "previous": "    const ip=await this.resolve(this.hostname);\n    if(this.closed)throw Error('Connection closed');\n    const socket=new net.Socket({highWaterMark:65536});this.socket=socket;\n    await new Promise((resolve,reject)=>{\n",
+      "current": "    const ip=await this.resolve(this.hostname);\n    if(this.closed)throw Error('Connection closed');\n    if(!isPublicIP(ip))throw Error('Private destination denied');\n    const socket=new net.Socket({highWaterMark:65536});this.socket=socket;\n    await new Promise((resolve,reject)=>{\n"
+    }
+  ]
+}

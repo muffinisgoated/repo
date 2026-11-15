@@ -1,0 +1,3 @@
+// Server-owned choices only. Discovery never activates a model or establishes its free quota.
+export const GEMINI_TEXT_MODELS=Object.freeze({fast:'gemini-3.1-flash-lite',candidates:Object.freeze(['gemini-3.1-flash-lite','gemini-3.5-flash-lite','gemini-3.6-flash','gemini-2.5-flash','gemini-3.8-flash'])});
+export function chooseMode(mode,messages,smartAvailable){if(mode==='smart')return smartAvailable?'smart':null;if(mode==='fast')return 'fast';if(mode!=='auto')return null;const text=messages.at(-1)?.content||'';const complex=/\b(?:debug|prove|proof|derive|complex|algorithm|optimi[sz]e|race condition|multistep|multi-step)\b/i.test(text);return smartAvailable&&complex?'smart':'fast';}

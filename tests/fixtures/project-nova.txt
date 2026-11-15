@@ -1,0 +1,26 @@
+PROJECT NOVA — Confidential Engineering Challenge
+A fictional technology company is choosing an electric vehicle prototype for a fleet of 120 vehicles.
+Five prototypes are available:
+PrototypeCost per vehicleRangeCharging timeDefect rateWeightAster$460390 km22 min1.0%205 kgBoreal$515430 km18 min1.8%210 kgCinder$495420 km16 min0.9%235 kgDawn$540445 km19 min1.1%215 kgEclipse$505410 km20 min1.2%198 kg
+Company Requirements
+To qualify, a prototype must meet ALL requirements:
+1. Driving range must be at least 410 km.
+2. Charging time must be no more than 20 minutes.
+3. Defect rate must be no higher than 1.2%.
+4. Vehicle weight must not exceed 220 kg.
+5. Total fleet cost must stay within $62,000.
+Financial Rules
+- The company must purchase exactly 120 identical vehicles.
+- Orders of at least 100 vehicles receive a 10% discount on the vehicle purchase price.
+- Shipping costs an additional $2,500 per fleet order.
+- No other discounts or fees apply.
+- If multiple prototypes qualify, choose the one with the lowest total fleet cost.
+CHALLENGE
+Determine which prototype the company should purchase.
+Explain:
+- Which prototypes fail the requirements and why.
+- Which prototypes qualify.
+- The total fleet cost after discount and shipping for every technically qualified prototype.
+- How much money remains from the $62,000 budget.
+- Why your final choice is better than the alternatives.
+Show your calculations clearly. Use only the information in this document.

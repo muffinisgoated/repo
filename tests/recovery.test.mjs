@@ -1,0 +1,16 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
+import crypto from 'node:crypto';
+import {isPublicIP,resolvePublicHost,validHostname} from '../security.mjs';
+import {resolveAddress,readPreferences} from '../public/navigation.mjs';
+import {publicFile} from '../server.mjs';
+test('provided backups retain verified original bytes',()=>{const manifest=JSON.parse(fs.readFileSync(new URL('../originals/SHA256-MANIFEST.json',import.meta.url)));for(const item of manifest)assert.equal(crypto.createHash('sha256').update(fs.readFileSync(new URL('../originals/'+item.file,import.meta.url))).digest('hex'),item.sha256);});
+test('47 recovered wallpaper assets remain available',()=>{const dir=new URL('../public/onboarding/wallpapers/',import.meta.url);assert.equal(fs.readdirSync(dir).filter(n=>/\.(svg|jpg)$/.test(n)).length,47);});
+test('URL routing supports websites and search without executable URLs or passwords',()=>{assert.equal(resolveAddress('example.com'),'https://example.com/');assert.equal(resolveAddress('a school question'),'https://duckduckgo.com/?q=a%20school%20question');for(const s of ['javascript:alert(1)','data:text/html,secret','file:///etc/passwd','https://user:secret@example.com','http://localhost','127.0.0.1','https://example.com:8080'])assert.throws(()=>resolveAddress(s),s);});
+test('IP checks reject private IPv4, IPv6 and mapped-loopback addresses',()=>{for(const ip of ['127.0.0.1','0.0.0.0','10.1.2.3','192.168.1.1','169.254.169.254','100.64.0.1','::1','fc00::123','fe80::1','::ffff:127.0.0.1'])assert.equal(isPublicIP(ip),false,ip);for(const ip of ['1.1.1.1','8.8.8.8','2606:4700:4700::1111'])assert.equal(isPublicIP(ip),true,ip);});
+test('DNS validates all answers and refuses mixed public/private rebinding answers',async()=>{assert.equal(await resolvePublicHost('example.com',async()=>[{address:'8.8.8.8'}]),'8.8.8.8');await assert.rejects(resolvePublicHost('example.com',async()=>[{address:'8.8.8.8'},{address:'fc00::1'}]));for(const h of ['localhost','x.local','127.0.0.1','example.com/../../x','-bad.example','x..example'])assert.equal(validHostname(h),false,h);});
+test('saved URLs require opt-in and malformed stored tabs recover safely',()=>{const read=d=>readPreferences({getItem:()=>JSON.stringify(d)});assert.deepEqual(read({rememberTabs:false,tabs:[{input:'https://example.com'}]}).tabs,[]);assert.equal(read({rememberTabs:true,tabs:[null,1,{input:'https://example.com'}]}).tabs.length,1);assert.equal(readPreferences({getItem:()=>'{'}).rememberTabs,false);});
+test('public static boundary blocks traversal and symlink escapes',()=>{const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'poxey-recovery-'));try{fs.mkdirSync(path.join(tmp,'www'));fs.writeFileSync(path.join(tmp,'secret'),'private');fs.writeFileSync(path.join(tmp,'www/index.html'),'ok');fs.symlinkSync(path.join(tmp,'secret'),path.join(tmp,'www/escape'));for(const url of ['/../secret','/%2e%2e/secret','/escape','/%00','/%XX'])assert.equal(publicFile(path.join(tmp,'www'),url),null);assert.ok(publicFile(path.join(tmp,'www'),'/'));}finally{fs.rmSync(tmp,{recursive:true,force:true});}});

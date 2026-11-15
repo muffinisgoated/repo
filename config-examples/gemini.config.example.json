@@ -1,0 +1,7 @@
+{
+  "provider": "gemini",
+  "enabled": false,
+  "freeOnlyConfirmed": false,
+  "geminiFreeOnlyConfirmed": false,
+  "geminiKeyFile": "/absolute/private/path/gemini.key"
+}

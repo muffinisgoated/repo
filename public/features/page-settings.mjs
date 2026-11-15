@@ -1,0 +1,10 @@
+import {revealSetting} from './settings-scroll.mjs';
+import {settingState} from './setting-state.mjs';
+// Page consent has one owner; rendering never silently changes stored preferences.
+export function mountPageSharing({root,store,onDisable=()=>{},onChange=()=>{}}){
+ const input=root.querySelector('#feature-page-ai');if(!input)return {sync(){}};
+ const hint=root.ownerDocument.createElement('p');hint.id='feature-page-state';hint.className='settings-hint';hint.setAttribute('role','status');input.closest('label').after(hint);input.setAttribute('aria-describedby',hint.id);
+ function sync(){const s=store.settings;input.checked=s.pageAI;input.disabled=s.privateSession||!s.cloudAI;hint.textContent=s.privateSession?'Unavailable in Private mode. Turn off Private session to share page text.':!s.cloudAI?'Unavailable until Allow cloud AI is enabled.':s.pageAI?'Enabled · reads only when you ask. '+(s.documentAI?'Separate editable-document permission is on.':'Editable text needs its separate opt-in or manual approval.'):'Disabled · turn on to ask about the active webpage.';settingState(input,input.disabled?'unavailable':s.pageAI?'on':'off',{hint,actionLabel:s.privateSession?'Privacy Settings':!s.cloudAI?'AI Settings':null,target:s.privateSession?'feature-private':'feature-cloud-ai',root});}
+ input.onchange=()=>{const s=store.settings;if(s.privateSession||!s.cloudAI){sync();return;}const previous=s.pageAI,enabled=input.checked;const saved=store.updateSettings({pageAI:enabled});if(!saved&&enabled)store.settings.pageAI=previous;sync();if(!enabled)onDisable();onChange();if(!saved)hint.textContent=enabled?'Could not save page-sharing permission. Nothing was enabled.':'Sharing stopped for this session, but the change could not be saved. Check browser storage.';};sync();return {sync};
+}
+export function focusPageSharing(root,id='feature-page-ai'){const control=root.querySelector('#'+id),row=control?.closest('.settings-row');if(!row)return;row.tabIndex=-1;revealSetting(root,row,{center:true});(control.disabled?row:control).focus({preventScroll:true});}

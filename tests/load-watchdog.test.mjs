@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {watchPage,needsComposer} from '../proxy-public/load-watchdog.mjs';
+function fixture(){let task=null,timeout=0,ready=[];const watcher=watchPage({onTimeout:()=>timeout++,onReady:r=>ready.push(r),setTimer:fn=>(task=fn,1),clearTimer:()=>task=null});return {watcher,fire:()=>task?.(),read:()=>({timeout,ready,task})};}
+test('page loading has one bounded notice and can recover afterward',()=>{const f=fixture();f.watcher.start();f.fire();assert.equal(f.read().timeout,1);f.watcher.ready();assert.deepEqual(f.read().ready,[true]);});
+test('success, navigation replacement and page cleanup cancel stale watchdogs',()=>{const f=fixture();f.watcher.start();f.watcher.start();f.watcher.ready();assert.equal(f.read().task,null);f.fire();assert.equal(f.read().timeout,0);f.watcher.start();f.watcher.cancel();f.fire();assert.equal(f.read().timeout,0);});
+test('composer readiness check applies only to actual ChatGPT hostname',()=>{assert.equal(needsComposer('https://chatgpt.com/'),true);for(const u of ['https://chatgpt.com.evil.example/','https://example.org/','bad'])assert.equal(needsComposer(u),false);});

@@ -1,0 +1,82 @@
+[
+  {
+    "game": "HexGL",
+    "kind": "MIT original title illustration",
+    "source": "https://raw.githubusercontent.com/BKcore/HexGL/master/css/title.png",
+    "license": "licenses/HexGL-MIT.txt",
+    "embedded_source_sha256": "8e5ebfe834b7a7a8ab7dc54b049051dd6230181ad36dcf4fbc433a5fd5802d93"
+  },
+  {
+    "game": "Chrome Dino",
+    "kind": "BSD original sprite in original SVG cover composition",
+    "source": "https://github.com/wayou/t-rex-runner",
+    "license": "licenses/Dino-BSD-3-Clause.txt"
+  },
+  {
+    "game": "Moto X3M",
+    "kind": "Y8 publisher promotional thumbnail in original SVG cover composition",
+    "source": "https://www.y8.com/games/moto_x3m",
+    "asset": "https://cdn2.y8.com/cloudimage/385883/file/w380h285_retina_webp-f8d4da6e2c9a10ee754db5d8e5871ae7.webp",
+    "rights": "Used for local game-identification review; Y8 provides thumbnail link/embed markup. Not a blanket license for game redistribution."
+  },
+  {
+    "game": "Geometry Dash — Official Demo",
+    "kind": "Original Poxey typography/vector fallback",
+    "source": "Original local SVG composition; no official logo claim",
+    "rights": "Original artwork; referenced game titles remain their owners’ marks"
+  },
+  {
+    "game": "Night Crossing",
+    "kind": "Original Poxey typography/vector fallback",
+    "source": "Original local SVG composition; no official logo claim",
+    "rights": "Original artwork; referenced game titles remain their owners’ marks"
+  },
+  {
+    "game": "Saurabh’s Sprint",
+    "kind": "Unmodified original game app/title icon, visually inspected",
+    "source": "https://github.com/Saurabh2005695/Saurabh-s-Sprint-",
+    "asset": "proxy-public/arcade/games/sprint/assets/icons/icon-192.png",
+    "license": "MIT; original notice retained in proxy-public/arcade/games/sprint/LICENSE",
+    "embedded_source_sha256": "a957292f22e84920be74208c55feff4feb8762293cc80c50055ae90a439e7398",
+    "note": "Publisher-provided original game artwork; no generated or recreated replacement"
+  },
+  {
+    "game": "Basketball Stars",
+    "kind": "Publisher promotional artwork in local SVG composition",
+    "source": "https://www.y8.com/games/basketball_stars",
+    "asset": "https://cdn2.y8.com/cloudimage/343077/file/w380h285_retina_webp-8c2a0e8ce3ffae50038e4b3ca5d18dc3.webp",
+    "embedded_source_sha256": "09d1be5c06b3576b56b5b95550780f49ec6678b10f66c70b8c14435cab43b0e7",
+    "rights": "Local identification/review only. Original publisher player is embedded unmodified; no game redistribution license asserted. Artwork/public distribution permission needs separate confirmation."
+  },
+  {
+    "game": "Duck Life",
+    "kind": "Publisher promotional artwork in local SVG composition",
+    "source": "https://www.wix.games/ducklife1",
+    "asset": "https://games.wixgames.co.uk/games/ducklife1/cover.png",
+    "embedded_source_sha256": "017c8260fe30030f674bae452caec0a835fd2e9354eebbd9ca0080c42deb61fb",
+    "rights": "Local identification/review only. Original publisher player is embedded unmodified; no game redistribution license asserted. Artwork/public distribution permission needs separate confirmation."
+  },
+  {
+    "game": "Duck Life 2: World Championship",
+    "kind": "Publisher promotional artwork in local SVG composition",
+    "source": "https://www.wix.games/ducklife2",
+    "asset": "https://games.wixgames.co.uk/games/ducklife2/cover.png",
+    "embedded_source_sha256": "c1a98d6760b2ba1d93a6b4882c9debf55ef02d62e01f70686ca98da783cf522f",
+    "rights": "Local identification/review only. Original publisher player is embedded unmodified; no game redistribution license asserted. Artwork/public distribution permission needs separate confirmation."
+  },
+  {
+    "game": "Basket Random",
+    "kind": "Publisher promotional artwork in local SVG composition",
+    "source": "https://www.twoplayergames.org/game/basket-random",
+    "asset": "https://images.twoplayergames.org/files/games/other/Basket_Random/basket-random-the-game.jpg?auto=format&amp;w=200",
+    "embedded_source_sha256": "aa89c819d59d2d6a7714f8afd91f93591c36d85844bcff504637a46dd9a38a94",
+    "rights": "Local identification/review only. Original publisher player is embedded unmodified; no game redistribution license asserted. Artwork/public distribution permission needs separate confirmation."
+  },
+  {
+    "game": "Tunnel Rush",
+    "kind": "Unmodified bundled title artwork embedded proportionally",
+    "source": "https://github.com/wnasmile/LAMAR/blob/bf8ff775baa0b9d6e530315b2553db29093bca5a/tunnel-rush/img/tunnel.jpg",
+    "license": "Private evaluation/integration; owner-reported permission; public redistribution scope not independently verified",
+    "embedded_source_sha256": "6a703d79bb762510d25c76aed99f24d14b4603548974d57161d25cef0c3694be"
+  }
+]

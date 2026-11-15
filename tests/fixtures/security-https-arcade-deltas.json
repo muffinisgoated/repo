@@ -1,0 +1,118 @@
+{
+  "server.mjs": [
+    {
+      "current": "  const arcadeOrigin=isolated?.arcade?.origin||proxyOrigin;\n  const betaArcade=isolated?.arcade?.beta||createBetaArcade({root,uiOrigin,proxyOrigin});\n",
+      "previous": "  const betaArcade=createBetaArcade({root,uiOrigin,proxyOrigin});\n"
+    },
+    {
+      "current": "  const localUnity=createGameLab({directory:options.localUnityDirectory,uiOrigin,proxyOrigin:arcadeOrigin,root,prefix:'/arcade-unity/',ownerPage:false,parentOrigin:arcadeOrigin,manifestName:'runtime-manifest.json',ancestorOrigins:[uiOrigin,arcadeOrigin]});\n",
+      "previous": "  const localUnity=createGameLab({directory:options.localUnityDirectory,uiOrigin,proxyOrigin,root,prefix:'/arcade-unity/',ownerPage:false,parentOrigin:proxyOrigin,manifestName:'runtime-manifest.json',ancestorOrigins:[uiOrigin,proxyOrigin]});\n"
+    },
+    {
+      "current": "  function requestHandler(isProxy,gameHandler=null,route=null,arcadeHost=false) {return (req,res)=>{\n",
+      "previous": "  function requestHandler(isProxy,gameHandler=null,route=null) {return (req,res)=>{\n"
+    },
+    {
+      "current": "    const isolationBroker=isolated&&isProxy&&!arcadeHost&&(req.url==='/isolated-http'||req.url==='/isolated-ws-ticket');\n",
+      "previous": "    const isolationBroker=isolated&&isProxy&&(req.url==='/isolated-http'||req.url==='/isolated-ws-ticket');\n"
+    },
+    {
+      "current": "    const pathname=req.url.split('?')[0];\n    const arcadeAsset=arcadeHost&&pathname.startsWith('/arcade/games/');\n    if(arcadeHost&&!arcadeAsset&&!pathname.startsWith('/arcade-unity/')&&\n      !/^\\/arcade\\/(?:host\\.(?:html|mjs|css)|host-config\\.js|saves\\.mjs|catalog\\.json)$/.test(pathname)){\n      res.writeHead(404,{'Cache-Control':'no-store'}).end();return;\n    }\n    if(isProxy&&(arcadeHost||!isolated)&&req.url==='/arcade/host-config.js'){\n      res.writeHead(200,{'Content-Type':'text/javascript','Cache-Control':'no-store','Cross-Origin-Resource-Policy':'same-origin','X-Content-Type-Options':'nosniff'});\n      return res.end('export default '+JSON.stringify({uiOrigin,https:Boolean(arcadeHost)})+';');\n    }\n",
+      "previous": ""
+    },
+    {
+      "current": "    if(isolated&&isProxy&&!arcadeHost){\n",
+      "previous": "    if(isolated&&isProxy){\n"
+    },
+    {
+      "current": "        res.writeHead(200,{'Content-Type':'text/javascript','Cache-Control':'no-store','X-Content-Type-Options':'nosniff',\n          'Service-Worker-Allowed':'/~/sj/'});\n",
+      "previous": "        res.writeHead(200,{'Content-Type':'text/javascript','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});\n"
+    },
+    {
+      "current": "      res.end(`window.POXEY_RUNTIME=${JSON.stringify({proxyOrigin:isolated?null:proxyOrigin,arcadeOrigin:isolated?isolated.arcade?.origin||null:proxyOrigin,uiOrigin,fixtureRoutes,fixtureWorkspace,isolated:Boolean(isolated)})};`);return;\n",
+      "previous": "      res.end(`window.POXEY_RUNTIME=${JSON.stringify({proxyOrigin:isolated?null:proxyOrigin,uiOrigin,fixtureRoutes,fixtureWorkspace,isolated:Boolean(isolated)})};`);return;\n"
+    },
+    {
+      "current": "    const file=arcadeAsset?publicFile(path.join(root,'proxy-public/arcade/games'),req.url.slice('/arcade/games'.length)):baseline?path.join(root,'originals/PoxeyX1-Web.html'):publicFile(path.join(root,isProxy?'proxy-public':'public'),req.url);\n",
+      "previous": "    const file=baseline?path.join(root,'originals/PoxeyX1-Web.html'):publicFile(path.join(root,isProxy?'proxy-public':'public'),req.url);\n"
+    },
+    {
+      "current": "    headers['Content-Security-Policy']=isProxy?`frame-ancestors ${uiOrigin}; object-src 'none'${isolated&&!arcadeHost?\"; frame-src 'self'; connect-src 'self'; base-uri 'none'\":\"\"}`:baseline?\"default-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'\":`default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; frame-src ${isolated?`https://*.test:${port}`:proxyRoutes.map(route=>route.origin).join(' ')}; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'`;\n    if(arcadeHost){\n      headers['Origin-Agent-Cluster']='?1';\n      if(arcadeAsset&&file.endsWith('.html'))headers['Content-Type']='text/plain; charset=utf-8';\n    }\n",
+      "previous": "    headers['Content-Security-Policy']=isProxy?`frame-ancestors ${uiOrigin}; object-src 'none'${isolated?\"; frame-src 'self'; connect-src 'self'; base-uri 'none'\":\"\"}`:baseline?\"default-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'\":`default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; frame-src ${isolated?`https://*.test:${port}`:proxyRoutes.map(route=>route.origin).join(' ')}; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'`;\n"
+    },
+    {
+      "current": "  const arcadeHost=isolated?.arcade&&requestHandler(true,null,{origin:arcadeOrigin},true);\n  const gameHandlers=new Map();\n  for(const {handler} of isolated?.arcade?.beta.origins||[])gameHandlers.set(handler,requestHandler(false,handler));\n",
+      "previous": ""
+    },
+    {
+      "current": "    if(authority==='arcade')return arcadeHost(req,res);\n    if(gameHandlers.has(authority))return gameHandlers.get(authority)(req,res);\n",
+      "previous": ""
+    },
+    {
+      "current": "  },(req,socket,head)=>arcade.upgrade(req,socket,head,uiOrigin)):serve(false);\n",
+      "previous": "  }):serve(false);\n"
+    }
+  ],
+  "public/arcade/ui.mjs": [
+    {
+      "current": " const arcadeOrigin=window.POXEY_RUNTIME.arcadeOrigin||window.POXEY_RUNTIME.proxyOrigin;\n",
+      "previous": ""
+    },
+    {
+      "current": " function stopHosted(preserveSession=false){if(!preserveSession)telemetry?.close();clearTimeout(timer);if(frame){frame.contentWindow?.postMessage({action:'unload',token},arcadeOrigin);frame.remove();frame=null;}document.body.classList.remove('arcade-playing');}\n",
+      "previous": " function stopHosted(preserveSession=false){if(!preserveSession)telemetry?.close();clearTimeout(timer);if(frame){frame.contentWindow?.postMessage({action:'unload',token},window.POXEY_RUNTIME.proxyOrigin);frame.remove();frame=null;}document.body.classList.remove('arcade-playing');}\n"
+    },
+    {
+      "current": "  frame.src=arcadeOrigin+'/arcade/host.html?'+new URLSearchParams({game:game.id,token,ui:location.origin,...(temporary?{temporary:'1'}:{})});\n",
+      "previous": "  frame.src=window.POXEY_RUNTIME.proxyOrigin+'/arcade/host.html?'+new URLSearchParams({game:game.id,token,ui:location.origin,...(temporary?{temporary:'1'}:{})});\n"
+    },
+    {
+      "current": " function receive(event){if(!frame||event.origin!==arcadeOrigin||event.source!==frame.contentWindow||event.data?.token!==token||event.data?.arcade!==true)return;if(['error','warning'].includes(event.data.type)&&event.data.beta===true){playerDiagnostics.push({event:event.data.type==='error'?'runtime-error':'dependency-warning',at:new Date().toISOString(),detail:typeof event.data.detail==='string'?event.data.detail.slice(0,700):''});if(playerDiagnostics.length>50)playerDiagnostics.shift();if(event.data.type==='warning')return;}if(temporary&&event.data.type==='save-state'){saves.set(event.data.id,event.data.value);const status=root.querySelector('.arcade-save-status');if(status)status.textContent='Progress kept for this visit';return;}if(temporary&&event.data.type==='load-state'){frame.contentWindow?.postMessage({action:'save-state',token,value:saves.get(event.data.id)??null},arcadeOrigin);return;}if(event.data.type==='save-persisted'){const saved=root.querySelector('.arcade-save-status');if(saved)saved.textContent='Progress saved on this device';return;}const e=root.querySelector('#arcade-status');if(!e)return;if(event.data.type==='document-loaded'){clearTimeout(timer);e.textContent='';e.hidden=true;}else{clearTimeout(timer);e.hidden=false;e.textContent=event.data.type==='error'&&event.data.beta===true?'Beta game could not start: '+String(event.data.detail||'A local dependency failed.').slice(0,220)+'. Retry or return to Library.':event.data.type==='slow'?'Still loading? Retry or return to the Library.':'The game could not be opened. Retry or return to the Library.';}}\n",
+      "previous": " function receive(event){if(!frame||event.origin!==window.POXEY_RUNTIME.proxyOrigin||event.source!==frame.contentWindow||event.data?.token!==token||event.data?.arcade!==true)return;if(['error','warning'].includes(event.data.type)&&event.data.beta===true){playerDiagnostics.push({event:event.data.type==='error'?'runtime-error':'dependency-warning',at:new Date().toISOString(),detail:typeof event.data.detail==='string'?event.data.detail.slice(0,700):''});if(playerDiagnostics.length>50)playerDiagnostics.shift();if(event.data.type==='warning')return;}if(temporary&&event.data.type==='save-state'){saves.set(event.data.id,event.data.value);const status=root.querySelector('.arcade-save-status');if(status)status.textContent='Progress kept for this visit';return;}if(temporary&&event.data.type==='load-state'){frame.contentWindow?.postMessage({action:'save-state',token,value:saves.get(event.data.id)??null},window.POXEY_RUNTIME.proxyOrigin);return;}if(event.data.type==='save-persisted'){const saved=root.querySelector('.arcade-save-status');if(saved)saved.textContent='Progress saved on this device';return;}const e=root.querySelector('#arcade-status');if(!e)return;if(event.data.type==='document-loaded'){clearTimeout(timer);e.textContent='';e.hidden=true;}else{clearTimeout(timer);e.hidden=false;e.textContent=event.data.type==='error'&&event.data.beta===true?'Beta game could not start: '+String(event.data.detail||'A local dependency failed.').slice(0,220)+'. Retry or return to Library.':event.data.type==='slow'?'Still loading? Retry or return to the Library.':'The game could not be opened. Retry or return to the Library.';}}\n"
+    }
+  ],
+  "proxy-public/arcade/host.mjs": [
+    {
+      "current": "import hostConfig from './host-config.js';\n",
+      "previous": ""
+    },
+    {
+      "current": "function send(type,detail={}){parent.postMessage({arcade:true,id,token,type,...detail},hostConfig.uiOrigin);}\n",
+      "previous": "function send(type,detail={}){parent.postMessage({arcade:true,id,token,type,...detail},ui);}\n"
+    },
+    {
+      "current": " if(ui!==hostConfig.uiOrigin||!/^[a-f0-9-]{36}$/.test(token||'')||!/^[a-z0-9-]{1,40}$/.test(id||''))throw Error('Invalid Arcade session');\n",
+      "previous": " if(ui!=='http://127.0.0.1:8800'||!/^[a-f0-9-]{36}$/.test(token||'')||!/^[a-z0-9-]{1,40}$/.test(id||''))throw Error('Invalid Arcade session');\n"
+    },
+    {
+      "current": " const gameHost=game.id==='local-slope'?'slope':Number(game.id.slice(3));\n const expectedOrigin=hostConfig.https?`https://game-${gameHost}.test:${location.port}`:(game.id==='local-slope'?'http://poxey-game-slope.localhost:12001':`http://poxey-game-${Number(game.id.slice(3))}.localhost:${10000+Number(game.id.slice(3))}`);\n const isolated=beta&&game.runtimeOrigin===expectedOrigin;if(beta&&game.runtimeOrigin&&!isolated)throw Error('Invalid game origin');\n",
+      "previous": " const isolated=beta&&game.runtimeOrigin===(game.id==='local-slope'?'http://poxey-game-slope.localhost:12001':`http://poxey-game-${Number(game.id.slice(3))}.localhost:${10000+Number(game.id.slice(3))}`);if(beta&&game.runtimeOrigin&&!isolated)throw Error('Invalid game origin');\n"
+    },
+    {
+      "current": "  const policy=`default-src 'none'; script-src ${location.origin} 'unsafe-inline'; style-src ${location.origin} 'unsafe-inline'; img-src ${location.origin} data: blob:; font-src ${location.origin} data:; media-src data: blob:; connect-src 'none'; frame-src 'none'; worker-src 'none'; object-src 'none'; form-action 'none'; base-uri ${location.origin}`;\n",
+      "previous": "  const policy=\"default-src 'none'; script-src http://localhost:8801 'unsafe-inline'; style-src http://localhost:8801 'unsafe-inline'; img-src http://localhost:8801 data: blob:; font-src http://localhost:8801 data:; media-src data: blob:; connect-src 'none'; frame-src 'none'; worker-src 'none'; object-src 'none'; form-action 'none'; base-uri http://localhost:8801\";\n"
+    }
+  ],
+  "game-lab/routes.mjs": [
+    {
+      "current": "   res.writeHead(200,{...shared,'Content-Type':'text/html; charset=utf-8','Content-Security-Policy':`default-src 'none'; script-src ${assetOrigin} ${proxyOrigin}${prefix}runtime.js blob: 'unsafe-eval'; style-src ${assetOrigin} 'unsafe-inline'; img-src ${assetOrigin} data: blob:; media-src ${assetOrigin} blob:; connect-src ${assetOrigin}; worker-src blob: ${assetOrigin}; base-uri ${assetOrigin}; frame-src 'none'; object-src 'none'; form-action 'none'; frame-ancestors ${ancestorOrigins.join(' ')}${proxyOrigin.startsWith('https:')?'; sandbox allow-scripts allow-pointer-lock':''}`});res.end(req.method==='HEAD'?undefined:html);return true;\n",
+      "previous": "   res.writeHead(200,{...shared,'Content-Type':'text/html; charset=utf-8','Content-Security-Policy':`default-src 'none'; script-src ${assetOrigin} ${proxyOrigin}${prefix}runtime.js blob: 'unsafe-eval'; style-src ${assetOrigin} 'unsafe-inline'; img-src ${assetOrigin} data: blob:; media-src ${assetOrigin} blob:; connect-src ${assetOrigin}; worker-src blob: ${assetOrigin}; base-uri ${assetOrigin}; frame-src 'none'; object-src 'none'; form-action 'none'; frame-ancestors ${ancestorOrigins.join(' ')}`});res.end(req.method==='HEAD'?undefined:html);return true;\n"
+    }
+  ],
+  "beta-arcade/game-origin.mjs": [
+    {
+      "current": "  if(rel==='diagnostics.js'&&origin.startsWith('https://')){\n   const script=fs.readFileSync(file,'utf8').replace(\"'http://localhost:8801'\",JSON.stringify(proxyOrigin));\n   headers['Content-Length']=Buffer.byteLength(script);\n   res.writeHead(200,headers).end(req.method==='HEAD'?undefined:script);\n   return true;\n  }\n",
+      "previous": ""
+    }
+  ],
+  "beta-arcade/routes.mjs": [
+    {
+      "current": "export function createBetaArcade({root,uiOrigin,proxyOrigin,gameOrigin=isolatedOrigin}){\n",
+      "previous": "export function createBetaArcade({root,uiOrigin,proxyOrigin}){\n"
+    },
+    {
+      "current": "   if(g.runtimeOrigin){\n    if(g.runtimeOrigin!==isolatedOrigin(g.id))ready=false;\n    g.runtimeOrigin=gameOrigin(g.id);\n    if(!g.runtimeOrigin)ready=false;\n   }\n   catalog.push(ready?g:{...g,disabled:true});\n   if(ready&&g.disabled!==true){\n    games.push(g);\n    if(g.runtimeOrigin)origins.push({game:g,handler:createGameOriginHandler({game:g,pack:p,directory,uiOrigin,proxyOrigin,origin:g.runtimeOrigin,diagnosticsFile:path.join(root,'proxy-public/arcade/beta-diagnostics.js')})});\n   }\n",
+      "previous": "   if(g.runtimeOrigin&&g.runtimeOrigin!==isolatedOrigin(g.id))ready=false;catalog.push(ready?g:{...g,disabled:true});if(ready&&g.disabled!==true){games.push(g);if(g.runtimeOrigin&&!g.disabled)origins.push({game:g,handler:createGameOriginHandler({game:g,pack:p,directory,uiOrigin,proxyOrigin,diagnosticsFile:path.join(root,'proxy-public/arcade/beta-diagnostics.js')})});}\n"
+    }
+  ]
+}

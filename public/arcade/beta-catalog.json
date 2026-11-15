@@ -1,0 +1,1282 @@
+[
+  {
+    "id": "gn-116",
+    "name": "MX OffRoad Mountain Bike",
+    "category": "Racing",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-116/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/116.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-116-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "d8de7cc0a80317bb6e557ee1ff280da8366021c898a46a65c0d46ecbc050d1f2",
+      "technical": "Corrected the reproduced document.create typo to the native createElement API. Gameplay retest required.",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Popular-title retest candidate"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "8f26f0d762ac325e3a70e766e2c5265d29e8f3ddbc1a419d17cbc973a520cbd4",
+    "runtimeOrigin": "http://poxey-game-116.localhost:10116",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "connect-src dependency",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-118",
+    "name": "Solar Smash",
+    "category": "Simulation",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-118/index.beta.html",
+    "source": "https://github.com/gn-math/assets/tree/6bacc0f4e61e95e6a4e4309a63b189e179d91e34/118",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-118-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "1d93c2e7b4a2eebb097fb43e31c78e31f7ab8b37fe07e55a65dd8cf675898360",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Popular-title retest candidate"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "42883aaf01386a0ed905f8589b077a16b79793271c0e5f577ab206d0828f4eca",
+    "runtimeOrigin": "http://poxey-game-118.localhost:10118",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "not-in-owner-failure-list",
+      "note": "Owner clarified other tested games worked. No per-title gameplay acceptance is inferred solely from absence of a failure screenshot."
+    }
+  },
+  {
+    "id": "gn-121",
+    "name": "Brawl Guys.io",
+    "category": "Action",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-121/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/121.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-121-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "fc4d5a4d9fad6944bb671d1ccb8c80c884b2a81a1ddf8a5741bd97e5ad79d940",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [
+        "appmanifest.json",
+        "icon-256.png",
+        "sw.js"
+      ],
+      "retestRequired": true,
+      "curation": "Retired from visible library; data and files preserved"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "39915eecf513ebdae837461b9da8202eb339818305ab84028afefe57ca5bdebc",
+    "runtimeOrigin": "http://poxey-game-121.localhost:10121",
+    "disabled": true,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "JavaScript error",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-120",
+    "name": "Fortzone Battle Royale",
+    "category": "Action",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-120/index.beta.html",
+    "source": "https://github.com/gn-math/assets/tree/6bacc0f4e61e95e6a4e4309a63b189e179d91e34/120",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-120-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "738fe5d1ec362f49b81c361e55f32cfe7107b0e28a5b82aa99e64e7a99ea891a",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Popular-title retest candidate"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "47bad51a11d763ca8f1f30ae3b2bb8c9ca65d1dfd257f8bf99b18b71873be195",
+    "runtimeOrigin": "http://poxey-game-120.localhost:10120",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "stuck connecting/loading",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-124",
+    "name": "Moto X3M Pool Party",
+    "category": "Racing",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-124/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/124.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-124-beta.jpg",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "4195186f1f6eda5a6f7b4d64f2b62877f5b67c701db9ebafcb2b94baea1df48e",
+      "technical": "Restored the content mount required by the original Phaser game; actual gameplay acceptance recorded separately.",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Popular-title retest candidate"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json",
+      "currentUserTesting": "core-gameplay-verified",
+      "milestone2": {
+        "evidence": "reports/milestone2/GAME-RESULTS.json",
+        "scope": "Observed playable scene and meaningful input; remaining acceptance checks and rights are recorded individually."
+      }
+    },
+    "packageHash": "4424d3892d37475f9d4078d72860515380cd32a5968e7f02fd691ae4ff7ca0dc",
+    "runtimeOrigin": "http://poxey-game-124.localhost:10124",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "connect-src dependency",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-186",
+    "name": "Ragdoll Archers",
+    "category": "Action",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-186/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/186.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-186-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "884a5adea2d699ca2d06f209466cb2942c1b3546543b48a559034e55ae997d04",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Popular-title retest candidate"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json",
+      "currentUserTesting": "core-gameplay-verified",
+      "milestone2": {
+        "evidence": "reports/milestone2/GAME-RESULTS.json",
+        "scope": "Observed playable scene and meaningful input; remaining acceptance checks and rights are recorded individually."
+      }
+    },
+    "packageHash": "c0af3036542b0dddf6c350aae282aa9b786a363657190ae8b83937f716c310c0",
+    "runtimeOrigin": "http://poxey-game-186.localhost:10186",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "blank or incomplete game",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-198",
+    "name": "Slope Plus",
+    "category": "Arcade",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-198/index.beta.html",
+    "source": "https://github.com/gn-math/assets/tree/6bacc0f4e61e95e6a4e4309a63b189e179d91e34/198",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-198-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "bf07004580afbda6ba73c523f2766e4c7bc210554dd343fb6e4079eed2f18757",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Retired from visible library; data and files preserved"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "45f70635824fe00da1efa39973b1968650e1db163e8c9b67e63d0ef4eabcc182",
+    "runtimeOrigin": "http://poxey-game-198.localhost:10198",
+    "disabled": true,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "blank or incomplete game",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-255",
+    "name": "Crazy Chicken 3D",
+    "category": "Simulation",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-255/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/255.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-255-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "85e46909d1aa01958732fe79438b0d70e6f2b733305ea14a9ea59070bbd6c604",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Retired from visible library; data and files preserved"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "67502f03a6d1879398cf9fe393954b70b414ac3177de739c91f6e2795c7c3d2a",
+    "runtimeOrigin": "http://poxey-game-255.localhost:10255",
+    "disabled": true,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "JavaScript error",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-256",
+    "name": "Crazy Kitty 3D",
+    "category": "Simulation",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-256/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/256.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-256-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "1596df2ecf14c37a4bce6faeb9421264651a046e622018576d680afe5da07bde",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Restored previous availability after owner clarified success feedback. Retained as previous Beta, outside the popular-35 target.",
+      "legacyRetained": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "de68366348452282bb936b2d6a4b1ad487e4aa4ab29f1e21c176f07aa3e72024",
+    "runtimeOrigin": "http://poxey-game-256.localhost:10256",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "not-in-owner-failure-list",
+      "note": "Owner clarified other tested games worked. No per-title gameplay acceptance is inferred solely from absence of a failure screenshot."
+    }
+  },
+  {
+    "id": "gn-258",
+    "name": "A Bite at Freddy's",
+    "category": "Horror",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-258/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/258.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-258-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Original logo/icon from the same recovered game bundle, visually checked; private evaluation, no publisher license claim",
+      "artworkSHA256": "f859327005331101505bf3083bcefea7caea22eb79b9e5faaf4589e35e83ad9f",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Retired from visible library; data and files preserved"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "0d4ed5687ba6e335cb8b2a44956544a1fc520a4efa537c5de6531c03993132b0",
+    "runtimeOrigin": "http://poxey-game-258.localhost:10258",
+    "disabled": true,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "getRegistration error",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-260",
+    "name": "RE:RUN",
+    "category": "Platformer",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-260/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/260.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-260-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "da6bc595565aae9c89a7d22d06e4f7540dbf7cf0e7a1fdddea490b715552fadb",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Retired from visible library; data and files preserved"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "8f828d287f13b3632bd3ce62c969565518b79d71da60c1d5e5e5bee75f6f3eff",
+    "runtimeOrigin": "http://poxey-game-260.localhost:10260",
+    "disabled": true,
+    "ownerFeedback": {
+      "status": "not-in-owner-failure-list",
+      "note": "Owner clarified other tested games worked. No per-title gameplay acceptance is inferred solely from absence of a failure screenshot."
+    }
+  },
+  {
+    "id": "gn-302",
+    "name": "Little Runmo",
+    "category": "Platformer",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-302/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/302.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-302-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "89e26f684ea79da4c7f1295312f3728b536e0608005630aa966b3e8bf44fa6d8",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Retired from visible library; data and files preserved"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "ccb959cc21ed718b615cad74020ffa9b7d52aea6014df165e8f1ba691b0ad815",
+    "runtimeOrigin": "http://poxey-game-302.localhost:10302",
+    "disabled": true,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "getRegistration error / black screen",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-310",
+    "name": "Dreadhead Parkour",
+    "category": "Platformer",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-310/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/310.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-310-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "ed61bbc3c14b26361e6c137b6fa006a281fd745d3bab78b0c1985652a1b52ec5",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Popular-title retest candidate"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json",
+      "currentUserTesting": "core-gameplay-verified",
+      "milestone2": {
+        "evidence": "reports/milestone2/GAME-RESULTS.json",
+        "scope": "Observed playable scene and meaningful input; remaining acceptance checks and rights are recorded individually."
+      }
+    },
+    "packageHash": "1ae71f38aa62f87beb5997ddcc8991eb9cb5aa2e73df57a01607e15a20c6d7a2",
+    "runtimeOrigin": "http://poxey-game-310.localhost:10310",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "Worker blocked by null origin",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-434",
+    "name": "God's Flesh",
+    "category": "Action",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-434/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/434.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-434-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "368edabc130fe943b07856ad53ca53432991f1f20bdeefb60fe953a88beea92e",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Restored previous availability after owner clarified success feedback. Retained as previous Beta, outside the popular-35 target.",
+      "legacyRetained": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "fdbc7322bcaadb49f9d06fa6ca5c0dbd5f6ba54abfd58c5addec5b5413524c8d",
+    "runtimeOrigin": "http://poxey-game-434.localhost:10434",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "not-in-owner-failure-list",
+      "note": "Owner clarified other tested games worked. No per-title gameplay acceptance is inferred solely from absence of a failure screenshot."
+    }
+  },
+  {
+    "id": "gn-441",
+    "name": "Kitty Toy",
+    "category": "Simulation",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-441/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/441.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-441-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Original logo/icon from the same recovered game bundle, visually checked; private evaluation, no publisher license claim",
+      "artworkSHA256": "f88c5350b80d10616817ce62fcceac57932180b236acd71c8443e15d6260e7fd",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Retired from visible library; data and files preserved"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "853a4d23e6c66c5fa87d8949b55bf8f562054eaa541a5da2e057c0e7a1eb44c1",
+    "runtimeOrigin": "http://poxey-game-441.localhost:10441",
+    "disabled": true,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "getRegistration error / black screen",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-442",
+    "name": "Infinimoes",
+    "category": "Puzzle",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-442/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/442.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-442-beta.jpg",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "798f715e637ce471c6df157a1f4e561e285f6840d5ffa20798dfe18f5f527ba6",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Retired from visible library; data and files preserved"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "4433e6355028fa581738c2fa0013ea224f3b8c5300476671d8d30224d793e99d",
+    "runtimeOrigin": "http://poxey-game-442.localhost:10442",
+    "disabled": true,
+    "ownerFeedback": {
+      "status": "not-in-owner-failure-list",
+      "note": "Owner clarified other tested games worked. No per-title gameplay acceptance is inferred solely from absence of a failure screenshot."
+    }
+  },
+  {
+    "id": "gn-447",
+    "name": "Nijika's Ahoge",
+    "category": "Arcade",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-447/index.beta.html",
+    "source": "https://github.com/gn-math/assets/tree/6bacc0f4e61e95e6a4e4309a63b189e179d91e34/447",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-447-beta.jpg",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "fd9e81154614b9d28eb5d6d25140c9041d825ff82644b01ce3bff9f4675effbb",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Retired from visible library; data and files preserved"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "e97f37b445bfa76b6b0c50c28ad8c394b91a26c79cad4e6808fa21064700bc34",
+    "runtimeOrigin": "http://poxey-game-447.localhost:10447",
+    "disabled": true,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "solid pink screen",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-473",
+    "name": "Spacebar Clicker",
+    "category": "Clicker",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-473/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/473.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-473-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "25e43a47e7c7ea48f147f59caf14bcafd1300de6daf55bafe3641d37cc127a7c",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [],
+      "retestRequired": true,
+      "curation": "Retired from visible library; data and files preserved"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "137c76f1d2701830a34d8aedfbf61e6f16b27074ecd7598a7c36df481dabc8e2",
+    "runtimeOrigin": "http://poxey-game-473.localhost:10473",
+    "disabled": true,
+    "ownerFeedback": {
+      "status": "not-in-owner-failure-list",
+      "note": "Owner clarified other tested games worked. No per-title gameplay acceptance is inferred solely from absence of a failure screenshot."
+    }
+  },
+  {
+    "id": "gn-123",
+    "name": "PolyTrack",
+    "category": "Racing",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-123/index.beta.html",
+    "source": "https://github.com/gn-math/assets/tree/6bacc0f4e61e95e6a4e4309a63b189e179d91e34/123",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-123-beta.svg",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Original logo/icon from the same recovered game bundle, visually checked; private evaluation, no publisher license claim",
+      "artworkSHA256": "a9e97f09421f50d8899ebbb525f7dbfc50c9dd1e6920e9cfc1a051d96c764d7e",
+      "technical": "Synchronous native worker initialization repairs the reproduced startup race; gameplay acceptance recorded separately.",
+      "optionalMissing": [
+        "manifest.json"
+      ],
+      "retestRequired": true,
+      "curation": "Popular-title retest candidate"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "1b77393bb42c6788c2ee02a83a308ed217e676419e4cb0718290615d8b62193d",
+    "runtimeOrigin": "http://poxey-game-123.localhost:10123",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "owner-reported-failure",
+      "reportedProblem": "addEventListener initialization",
+      "currentRuntimeRetest": "pending — original reported failure is NOT marked resolved by automated tests"
+    }
+  },
+  {
+    "id": "gn-199",
+    "name": "Time Shooter 1",
+    "category": "Action",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-199/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/199.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-199-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "7d391843d9a5fcac0f35e1d95ffa480f0951e53311d628ea57f499456888611c",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [
+        "TemplateData/favicon.ico"
+      ],
+      "retestRequired": true,
+      "curation": "Popular-title retest candidate"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "1fe8f467e90823fa7172cc204431591708e8a15fdf73ef84df500ba683c52b6f",
+    "runtimeOrigin": "http://poxey-game-199.localhost:10199",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "not-in-owner-failure-list",
+      "note": "Owner clarified other tested games worked. No per-title gameplay acceptance is inferred solely from absence of a failure screenshot."
+    }
+  },
+  {
+    "id": "gn-200",
+    "name": "Time Shooter 2",
+    "category": "Action",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-200/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/200.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-200-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "f376c0de85646de2db80eb0d42cffb659186bc6a78b9d48d768f9129b52c3145",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [
+        "TemplateData/favicon.ico"
+      ],
+      "retestRequired": true,
+      "curation": "Popular-title retest candidate"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json"
+    },
+    "packageHash": "11c321f32e176e74d5329f50693135f4fae0df250ed361cf3c3316214f1d4ed8",
+    "runtimeOrigin": "http://poxey-game-200.localhost:10200",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "not-in-owner-failure-list",
+      "note": "Owner clarified other tested games worked. No per-title gameplay acceptance is inferred solely from absence of a failure screenshot."
+    }
+  },
+  {
+    "id": "gn-346",
+    "name": "Sort the Court",
+    "category": "Strategy",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-346/index.beta.html",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/346.html",
+    "controls": "Click the game for keyboard focus. Follow its own controls; controls and touch support await gameplay testing.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-346-beta.png",
+    "offline": false,
+    "mobile": "Unverified — desktop recommended",
+    "saves": "Game-only browser storage; localStorage is temporary, engine IndexedDB/cache may persist. No access to PoxeyX1 profile data.",
+    "rights": "Owner-authorized private local evaluation only. Publisher redistribution permission is not established; no public release.",
+    "beta": {
+      "localOnly": true,
+      "artwork": "Catalog title artwork visually matched for private evaluation; no publisher license claim",
+      "artworkSHA256": "9d084d233a1116eb3a1ae67b34ff1090316d9e0b91a35f2c524c9c254a6105eb",
+      "technical": "Dedicated game-only origin; genuine worker APIs; gameplay retest required",
+      "optionalMissing": [
+        "TemplateData/favicon.ico"
+      ],
+      "retestRequired": true,
+      "curation": "Popular-title retest candidate"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage85-beta/integration.json",
+      "currentUserTesting": "core-gameplay-verified",
+      "milestone2": {
+        "evidence": "reports/milestone2/GAME-RESULTS.json",
+        "scope": "Observed playable scene and meaningful input; remaining acceptance checks and rights are recorded individually."
+      }
+    },
+    "packageHash": "7de6b6c3f64b33a810ae1f50dfe219287056a4802a84f4afcf1f4aeb01228bc2",
+    "runtimeOrigin": "http://poxey-game-346.localhost:10346",
+    "disabled": false,
+    "ownerFeedback": {
+      "status": "not-in-owner-failure-list",
+      "note": "Owner clarified other tested games worked. No per-title gameplay acceptance is inferred solely from absence of a failure screenshot."
+    }
+  },
+  {
+    "id": "gn-739",
+    "name": "Soccer Random",
+    "category": "Sports",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-739/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-739.localhost:10739",
+    "source": "https://www.twoplayergames.org/game/soccer-random",
+    "controls": "W / Up arrow to jump and kick; touch controls where supported. Actual controls await gameplay acceptance.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-739-beta.jpg",
+    "disabled": false,
+    "mobile": "Not verified",
+    "saves": "Game-only storage/cache on a separate game origin; no PoxeyX1 profile access.",
+    "rights": "Private local evaluation of the previously recovered package. Publisher public redistribution approval not established; original engine and attribution retained.",
+    "beta": {
+      "localOnly": true,
+      "retestRequired": true,
+      "curation": "Publisher-listed popular game; source/runtime configuration repaired, gameplay pending",
+      "technical": "Recovered file hashes and entry references validated; genuine offline cache manifest generated",
+      "artwork": "Bundled Soccer Random title banner visually checked; private evaluation only",
+      "artworkSHA256": "35b1d2dbbdd6bb36cb1765947bcaf4760c79b6d6f1581f237810715966b0152a"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage86/soccer-package.json",
+      "currentUserTesting": "core-gameplay-verified",
+      "milestone2": {
+        "evidence": "reports/milestone2/GAME-RESULTS.json",
+        "scope": "Observed playable scene and meaningful input; remaining acceptance checks and rights are recorded individually."
+      }
+    },
+    "packageHash": "183fe31477a54f378ef2fe5c1fd8f5ab9d75040e30f590b37dc23488851ebd93",
+    "ownerFeedback": {
+      "status": "not-in-owner-failure-list",
+      "note": "Owner clarified other tested games worked. No per-title gameplay acceptance is inferred solely from absence of a failure screenshot."
+    }
+  },
+  {
+    "id": "local-slope",
+    "name": "Slope",
+    "category": "Arcade",
+    "type": "beta-local",
+    "releaseStatus": "beta-local",
+    "url": "/arcade-beta/runtime/local-slope/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-slope.localhost:12001",
+    "source": "https://www.y8.com/games/slope",
+    "controls": "Left/right or A/D to steer. Click game for focus. Gameplay acceptance pending.",
+    "verified": false,
+    "disabled": false,
+    "cover": "/arcade/art/local-slope-beta.jpg",
+    "featured": false,
+    "mobile": "Not verified",
+    "saves": "Separate game-only origin; no PoxeyX1 profile access.",
+    "rights": "Private local evaluation using the earlier owner-authorized recovery. Publisher public redistribution permission is not established. Original Y8 branding retained.",
+    "beta": {
+      "localOnly": true,
+      "retestRequired": true,
+      "technical": "Original Slope WASM/data/framework and entry references validated. Runtime/gameplay NOT verified.",
+      "artwork": "Original bundled SLOPE title image visually inspected; no publisher-rights claim.",
+      "artworkSHA256": "2880d6bececebf36ddcf1358d5b28c8a966cf2066cd298118d55495a3080e816"
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "technical-beta",
+      "evidence": "reports/stage88/slope.json",
+      "currentUserTesting": "core-gameplay-verified",
+      "milestone2": {
+        "evidence": "reports/milestone2/GAME-RESULTS.json",
+        "scope": "Observed playable scene and meaningful input; remaining acceptance checks and rights are recorded individually."
+      }
+    },
+    "packageHash": "aad713584a99ff915a6ae103cbfe1ced141453d0e49c3a27145320c798db6b55"
+  },
+  {
+    "id": "gn-181",
+    "name": "Minecraft 1.8.8",
+    "category": "Sandbox",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-181/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-181.localhost:10181",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/181-fix.html",
+    "controls": "WASD to move, mouse to look, Space to jump, E inventory. Singleplayer; external multiplayer services are unavailable.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-181-beta.png",
+    "disabled": false,
+    "mobile": "Where supported by the original build; owner testing pending",
+    "saves": "Isolated game-origin storage; PoxeyX1 profile, favorites and other games are inaccessible.",
+    "rights": "Owner-authorized private local evaluation and use of game and artwork; permission confirmed by owner. Original notices and credits retained.",
+    "beta": {
+      "localOnly": true,
+      "ownerTesting": true,
+      "artwork": "Authentic GN-Math catalog cover",
+      "artworkSHA256": "6dcb0ed6965ea90e0d8060a78753c1d09b3c932cdec8054edf699a082adec44b",
+      "technical": "Complete approved-source local package; Ready for Owner Testing",
+      "retestRequired": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "ready-for-owner-testing",
+      "evidence": "reports/owner-testing-additions/INTEGRATION.json"
+    },
+    "packageHash": "4abe0d1bfd2020e2670d79c5e7e4027ece60aebff78c371bb2ec048188ec261f"
+  },
+  {
+    "id": "gn-175",
+    "name": "Run 1",
+    "category": "Runner",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-175/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-175.localhost:10175",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/175-fix.html",
+    "controls": "Arrow keys to move; Space to jump. Click the game for keyboard focus.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-175-beta.png",
+    "disabled": false,
+    "mobile": "Where supported by the original build; owner testing pending",
+    "saves": "Isolated game-origin storage; PoxeyX1 profile, favorites and other games are inaccessible.",
+    "rights": "Owner-authorized private local evaluation and use of game and artwork; permission confirmed by owner. Original notices and credits retained.",
+    "beta": {
+      "localOnly": true,
+      "ownerTesting": true,
+      "artwork": "Authentic GN-Math catalog cover",
+      "artworkSHA256": "f4bdbc378bff764b898168632cd15766df9d98e75d548f06b0ca8a45f15f977d",
+      "technical": "Complete approved-source local package; Ready for Owner Testing",
+      "retestRequired": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "ready-for-owner-testing",
+      "evidence": "reports/owner-testing-additions/INTEGRATION.json"
+    },
+    "packageHash": "f6eb5748809eb97241c92bb824074c9fd405b85988a06758c31ff9b8866d2955"
+  },
+  {
+    "id": "gn-176",
+    "name": "Run 2",
+    "category": "Runner",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-176/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-176.localhost:10176",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/176-fix.html",
+    "controls": "Arrow keys to move; Space to jump. Click the game for keyboard focus.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-176-beta.png",
+    "disabled": false,
+    "mobile": "Where supported by the original build; owner testing pending",
+    "saves": "Isolated game-origin storage; PoxeyX1 profile, favorites and other games are inaccessible.",
+    "rights": "Owner-authorized private local evaluation and use of game and artwork; permission confirmed by owner. Original notices and credits retained.",
+    "beta": {
+      "localOnly": true,
+      "ownerTesting": true,
+      "artwork": "Authentic GN-Math catalog cover",
+      "artworkSHA256": "87880e64c4c1807aedc91c15e5e226fcfbdb311096944eb7212b99d37bb086ca",
+      "technical": "Complete approved-source local package; Ready for Owner Testing",
+      "retestRequired": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "ready-for-owner-testing",
+      "evidence": "reports/owner-testing-additions/INTEGRATION.json"
+    },
+    "packageHash": "8e19cdb9e4f3f90002b09d141962b4555a43459ac5b06523a3e847c893e22941"
+  },
+  {
+    "id": "gn-178",
+    "name": "Swords and Souls",
+    "category": "Action",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-178/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-178.localhost:10178",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/178-fix.html",
+    "controls": "Mouse to select, train and fight; follow each training activity’s keyboard prompts.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-178-beta.png",
+    "disabled": false,
+    "mobile": "Where supported by the original build; owner testing pending",
+    "saves": "Isolated game-origin storage; PoxeyX1 profile, favorites and other games are inaccessible.",
+    "rights": "Owner-authorized private local evaluation and use of game and artwork; permission confirmed by owner. Original notices and credits retained.",
+    "beta": {
+      "localOnly": true,
+      "ownerTesting": true,
+      "artwork": "Authentic GN-Math catalog cover",
+      "artworkSHA256": "2e6b4f9b70e5e14b80f882d58dfdd982e0c3d1736734d362c8d89d4cd125bcde",
+      "technical": "Complete approved-source local package; Ready for Owner Testing",
+      "retestRequired": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "ready-for-owner-testing",
+      "evidence": "reports/owner-testing-additions/INTEGRATION.json"
+    },
+    "packageHash": "b1e267439db2e05f47fb77fb40912d474f83bc0e1c353705e2d728b8bf1466bf"
+  },
+  {
+    "id": "gn-197",
+    "name": "Elastic Man",
+    "category": "Simulation",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-197/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-197.localhost:10197",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/197-fix.html",
+    "controls": "Click / touch and drag the face; choose Medium or High quality in the game.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-197-beta.png",
+    "disabled": false,
+    "mobile": "Where supported by the original build; owner testing pending",
+    "saves": "Isolated game-origin storage; PoxeyX1 profile, favorites and other games are inaccessible.",
+    "rights": "Owner-authorized private local evaluation and use of game and artwork; permission confirmed by owner. Original notices and credits retained.",
+    "beta": {
+      "localOnly": true,
+      "ownerTesting": true,
+      "artwork": "Authentic GN-Math catalog cover",
+      "artworkSHA256": "dd00ea6af7d8e933c42247c1c1302e85fcd25d4ebdc955860a6d33e598573ef2",
+      "technical": "Complete approved-source local package; Ready for Owner Testing",
+      "retestRequired": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "ready-for-owner-testing",
+      "evidence": "reports/owner-testing-additions/INTEGRATION.json"
+    },
+    "packageHash": "12045f4d4e810cf11cbfabba95be42c044d7c46c6116a87e3c747557afcb923a"
+  },
+  {
+    "id": "gn-203",
+    "name": "DOOM",
+    "category": "Action",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-203/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-203.localhost:10203",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/203-fix2.html",
+    "controls": "Arrow keys to move, Ctrl to fire, Space to use doors, Enter to confirm; DOS touch controls where supported.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-203-beta.png",
+    "disabled": false,
+    "mobile": "Where supported by the original build; owner testing pending",
+    "saves": "Isolated game-origin storage; PoxeyX1 profile, favorites and other games are inaccessible.",
+    "rights": "Owner-authorized private local evaluation and use of game and artwork; permission confirmed by owner. Original notices and credits retained.",
+    "beta": {
+      "localOnly": true,
+      "ownerTesting": true,
+      "artwork": "Authentic GN-Math catalog cover",
+      "artworkSHA256": "871242d35671c126fb4058dc903e08ebba3f62e879bc0e095b167b86feb04ecf",
+      "technical": "Complete approved-source local package; Ready for Owner Testing",
+      "retestRequired": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "ready-for-owner-testing",
+      "evidence": "reports/owner-testing-additions/INTEGRATION.json"
+    },
+    "packageHash": "0899278df5a2c92c4db9569f411d541b220a01de8d48b49a3b3cea0a5533363b"
+  },
+  {
+    "id": "gn-294",
+    "name": "Idle Dice",
+    "category": "Clicker",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-294/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-294.localhost:10294",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/294-fix.html",
+    "controls": "Click / tap dice, upgrades and controls in the game.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-294-beta.png",
+    "disabled": false,
+    "mobile": "Where supported by the original build; owner testing pending",
+    "saves": "Isolated game-origin storage; PoxeyX1 profile, favorites and other games are inaccessible.",
+    "rights": "Owner-authorized private local evaluation and use of game and artwork; permission confirmed by owner. Original notices and credits retained.",
+    "beta": {
+      "localOnly": true,
+      "ownerTesting": true,
+      "artwork": "Authentic GN-Math catalog cover",
+      "artworkSHA256": "31623e00105e53cc0c3bef0449149e3f5f81d5b211f6620ed34f25143f0e96ed",
+      "technical": "Complete approved-source local package; Ready for Owner Testing",
+      "retestRequired": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "ready-for-owner-testing",
+      "evidence": "reports/owner-testing-additions/INTEGRATION.json"
+    },
+    "packageHash": "47dd5f56c270326eb698e9fd552ef5b1fe6e93bbf49e2d9b172ee671a99c55ab"
+  },
+  {
+    "id": "gn-309",
+    "name": "Sandboxels",
+    "category": "Sandbox",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-309/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-309.localhost:10309",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/309-fix.html",
+    "controls": "Click / touch to draw elements; mouse wheel changes brush size. Space pauses; R resets.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-309-beta.png",
+    "disabled": false,
+    "mobile": "Where supported by the original build; owner testing pending",
+    "saves": "Isolated game-origin storage; PoxeyX1 profile, favorites and other games are inaccessible.",
+    "rights": "Owner-authorized private local evaluation and use of game and artwork; permission confirmed by owner. Original notices and credits retained.",
+    "beta": {
+      "localOnly": true,
+      "ownerTesting": true,
+      "artwork": "Authentic GN-Math catalog cover",
+      "artworkSHA256": "66d6845c2dfcf3fb598b6239b5ad31c10fe68f0534323497c6fb16aa791bdd82",
+      "technical": "Complete approved-source local package; Ready for Owner Testing",
+      "retestRequired": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "ready-for-owner-testing",
+      "evidence": "reports/owner-testing-additions/INTEGRATION.json"
+    },
+    "packageHash": "d6d2f157e402dc19436b757f5f9db2f6ebaea660a2562e3cfa634aa91577ddaa"
+  },
+  {
+    "id": "gn-315",
+    "name": "Jelly Mario",
+    "category": "Platformer",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-315/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-315.localhost:10315",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/315-fix.html",
+    "controls": "Arrow keys to move. Desktop keyboard recommended; the original build does not support mobile.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-315-beta.jpg",
+    "disabled": false,
+    "mobile": "Desktop only",
+    "saves": "Isolated game-origin storage; PoxeyX1 profile, favorites and other games are inaccessible.",
+    "rights": "Owner-authorized private local evaluation and use of game and artwork; permission confirmed by owner. Original notices and credits retained.",
+    "beta": {
+      "localOnly": true,
+      "ownerTesting": true,
+      "artwork": "Authentic GN-Math catalog cover",
+      "artworkSHA256": "d8971e321d539f943388b9b25a02171e199d34e094705867f6cb7b69a9a7ae78",
+      "technical": "Complete approved-source local package; Ready for Owner Testing",
+      "retestRequired": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "ready-for-owner-testing",
+      "evidence": "reports/owner-testing-additions/INTEGRATION.json"
+    },
+    "packageHash": "f74dd12d833ab54bee89c674a08d8ac567384404dda39f6bd9a0554b702cfe5d"
+  },
+  {
+    "id": "gn-122",
+    "name": "Survival Race",
+    "category": "Racing",
+    "type": "beta-local",
+    "url": "/arcade-beta/runtime/gn-122/index.beta.html",
+    "runtimeOrigin": "http://poxey-game-122.localhost:10122",
+    "source": "https://github.com/gn-math/html/blob/63c1608976000f23e4466c6d3b58f283149eeff5/122-fix2.html",
+    "controls": "Arrow keys / WASD to drive; follow the game’s jump and action prompts.",
+    "verified": false,
+    "releaseStatus": "beta-local",
+    "featured": false,
+    "cover": "/arcade/art/gn-122-beta.png",
+    "disabled": false,
+    "mobile": "Where supported by the original build; owner testing pending",
+    "saves": "Isolated game-origin storage; PoxeyX1 profile, favorites and other games are inaccessible.",
+    "rights": "Owner-authorized private local evaluation and use of game and artwork; permission confirmed by owner. Original notices and credits retained.",
+    "beta": {
+      "localOnly": true,
+      "ownerTesting": true,
+      "artwork": "Authentic GN-Math catalog cover",
+      "artworkSHA256": "f98a1c486321f01e0a12468eba74b5efe2d8a4c705d9864cd5fc8aec759779d4",
+      "technical": "Complete approved-source local package; Ready for Owner Testing",
+      "retestRequired": true
+    },
+    "verification": {
+      "gameplay": "unverified",
+      "launch": "ready-for-owner-testing",
+      "evidence": "reports/owner-testing-additions/INTEGRATION.json"
+    },
+    "packageHash": "c93eb615a02a0670ab34911d743f5627a5b9a66ce7655cba2e5b26bda9c897c4"
+  }
+]

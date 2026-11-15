@@ -1,0 +1,8 @@
+{
+  "version":"2.0.0",
+  "tasks":[
+    {"label":"PoxeyX1: Start local development","type":"npm","script":"start","isBackground":true,"problemMatcher":[],"presentation":{"reveal":"always","panel":"dedicated"}},
+    {"label":"PoxeyX1: Targeted tests","type":"npm","script":"test","group":{"kind":"test","isDefault":true},"problemMatcher":[]},
+    {"label":"PoxeyX1: Syntax checks","type":"npm","script":"check","problemMatcher":[]}
+  ]
+}

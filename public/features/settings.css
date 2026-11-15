@@ -1,0 +1,99 @@
+/* Settings cards use the current theme's surfaces and text colors. */
+.poxey-settings {
+ display: grid;
+ gap: 12px;
+}
+.poxey-settings > [role="status"]:empty { display: none; }
+.poxey-settings .feature-section {
+ margin: 0;
+ padding: 15px 17px;
+ background: var(--panel-2);
+ border: 1px solid var(--line);
+ border-radius: 14px;
+}
+.poxey-settings .feature-section h3 {
+ margin: 0 0 10px;
+ font-size: 15px;
+ letter-spacing: -.02em;
+}
+.poxey-settings .settings-row { padding: 10px 0; }
+.poxey-settings .settings-row .feature-setting { min-height: 30px; }
+.poxey-settings .settings-row[data-state="unavailable"] { border-left: 0; }
+.poxey-settings .settings-state:not([data-important]) { opacity: .8; }
+.poxey-settings .settings-hint { color: var(--subtext); }
+.poxey-settings .settings-hint:empty { display: none; }
+.poxey-settings summary { cursor: pointer; color: var(--subtext); font-weight: 600; }
+.poxey-settings .settings-details summary { min-height: 28px; }
+.poxey-settings .web-action { min-height: 34px; border-radius: 8px; }
+.poxey-settings .web-action[aria-pressed="true"] { border-color: var(--accent); color: var(--text); }
+.poxey-settings .settings-select {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: 8px;
+}
+.poxey-settings .settings-select select {
+ min-height: 36px;
+ max-width: 100%;
+ color: var(--text);
+ background: var(--panel);
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ padding: 4px 8px;
+ color-scheme: dark;
+}
+body[data-theme="light"] .settings-select select { color-scheme: light; }
+.tab-preview {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 6px;
+ padding: 8px;
+ margin: 8px 0 10px;
+ background: var(--bar);
+ border: 1px solid var(--line);
+ border-radius: 10px;
+}
+.tab-preview-item {
+ padding: 5px 9px;
+ font-size: 12px;
+ color: var(--subtext);
+ border: 1px solid transparent;
+ border-radius: 7px;
+}
+.tab-preview-item.active { color: var(--text); background: var(--panel-2); border-color: var(--line); }
+.tab-presets, .tab-settings-footer { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; }
+.preset-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-inline-end: 5px; }
+.tab-custom { margin: 10px 0; }
+.tab-custom > summary { min-height: 32px; line-height: 32px; }
+.tab-colors { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px 10px; margin-bottom: 8px; }
+.tab-color-field {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 7px;
+ min-height: 40px;
+ padding: 3px 7px;
+ background: var(--panel);
+ border: 1px solid var(--line);
+ border-radius: 8px;
+ font-size: 12px;
+}
+.tab-color-field input { flex: none; width: 34px; height: 30px; padding: 2px; background: var(--panel); border: 0; cursor: pointer; }
+.tab-settings-footer button:disabled, .tab-custom button:disabled { opacity: .55; cursor: default; }
+
+body[data-custom-tabs] :is(.tab-button,.rail-tab,.tab-preview-item) {
+ background: var(--tab-custom-inactive) !important;
+ color: var(--tab-custom-inactive-text) !important;
+}
+body[data-custom-tabs] :is(.tab-button,.rail-tab,.tab-preview-item).active {
+ background: var(--tab-custom-active) !important;
+ color: var(--tab-custom-active-text) !important;
+ border-color: var(--tab-custom-accent,var(--line)) !important;
+}
+body[data-custom-tabs] .tab-button .close-tab { color: inherit; opacity: 1; }
+body[data-custom-tabs] .tab-button.active .tab-dot { background: var(--tab-custom-accent,var(--accent)); }
+@media (max-width: 420px) {
+ .poxey-settings .feature-section { padding: 12px; }
+ .tab-colors { grid-template-columns: 1fr; }
+}

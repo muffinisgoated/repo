@@ -1,0 +1,1 @@
+html,body{margin:0;width:100%;height:100%;background:#fff;color:#222;font:14px system-ui}body{display:flex;flex-direction:column}#state{padding:12px;margin:0;background:#15151b;color:#ddd}#state[hidden]{display:none}iframe{border:0;width:100%;min-height:0;flex:1}

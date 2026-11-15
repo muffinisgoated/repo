@@ -1,0 +1,11 @@
+# Connected Clients and optional analytics
+
+Connected Clients is automatic operational presence: distinct currently connected Poxey workspace/browser-client sessions, grouped across their Wisp transports. It is not verified unique people, profiles or installations. Wisp Connections separately counts transport sockets.
+
+One cryptographically random grouping identifier lives only in each open workspace's memory. Its inner tabs share that grouping; other workspaces/reloads get new identifiers. The bridge strips the initial grouping fragment and uses the validated Wisp grouping route. No cookie, localStorage, hardware fingerprint, browsing content or persistent operational identity is required. Private-mode transports count too, without reporting a Private flag.
+
+The server retains live connection groups in bounded memory. Closing the last transport removes presence. Pings run every15seconds;45seconds without a pong expires on the next sweep (about60seconds maximum plus scheduling). Restart clears operational presence. Aggregates expose no identifiers. Legacy transports without grouping produce a truthful lower bound/unknown exact count, never an invented human count. Client-asserted grouping is not authentication or abuse-proof uniqueness.
+
+Optional controls are separate, default-off and now inside closed Advanced privacy — optional analytics in Settings. Moving them changes no saved consent and starts no reporting. Reported Active Sessions counts consenting recent reporting sessions using a temporary cookie, five-minute activity window and thirty-minute in-memory retention. Private mode never sends those reports.
+
+Existing All-Time Visitors and Last30Days are optional consenting-browser estimates, not unique humans, installer downloads, mandatory Connected Clients reports or raw session-start counts. Existing random first-party receipts/hashed last-visit records retain their disclosed thirty-day policy; aggregate lifetime totals persist. Clearing storage can create a new estimated visitor. No extra persistent tracking or new session-start telemetry was added by the Settings cleanup. Existing user controls, stored choices, deletion/retention policies and Admin metrics remain unchanged.

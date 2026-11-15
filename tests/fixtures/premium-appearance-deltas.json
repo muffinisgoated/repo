@@ -1,0 +1,100 @@
+{
+  "public/web-edition.js": [
+    {
+      "current": "import {createBrowserAccent,mountBrowserAccent} from './features/browser-appearance.mjs';\n",
+      "previous": ""
+    },
+    {
+      "current": "const profileName=new URL(location.href).searchParams.get('qa-profile');\nconst qaProfile=['browser-features','premium-ui'].includes(profileName);\nconst storedKey=key=>qaProfile?key+'-qa-'+profileName:key;\n",
+      "previous": "const qaProfile=new URL(location.href).searchParams.get('qa-profile')==='browser-features';\nconst storedKey=key=>qaProfile?key+'-qa-browser-features':key;\n"
+    },
+    {
+      "current": "const wallpaperStore=createWallpaperStore({name:qaProfile?(profileName==='premium-ui'?'poxey-custom-wallpapers-v1-premium-qa':'poxey-custom-wallpapers-v1-qa'):'poxey-custom-wallpapers-v1'});\n",
+      "previous": "const wallpaperStore=createWallpaperStore({name:qaProfile?'poxey-custom-wallpapers-v1-qa':'poxey-custom-wallpapers-v1'});\n"
+    },
+    {
+      "current": "function savePreferences(){try{featureStorage.setItem('poxey-web-recovery-v1',JSON.stringify({wallpaper,theme:document.body.dataset.theme||'black',rememberTabs:prefs.rememberTabs,tabs:prefs.rememberTabs&&!browserStore.settings.privateSession?tabs.map(t=>({title:t.title,view:t.view,input:t.input})):[]}));return true;}catch{return false;}}\n",
+      "previous": "function savePreferences(){try{featureStorage.setItem('poxey-web-recovery-v1',JSON.stringify({wallpaper,theme:document.body.dataset.theme||'dark',rememberTabs:prefs.rememberTabs,tabs:prefs.rememberTabs&&!browserStore.settings.privateSession?tabs.map(t=>({title:t.title,view:t.view,input:t.input})):[]}));return true;}catch{return false;}}\n"
+    },
+    {
+      "current": " for(const t of tabs){const b=document.createElement('button');b.type='button';b.className='tab-button'+(t.id===current?' active':'');b.setAttribute('role','tab');b.setAttribute('aria-selected',String(t.id===current));b.tabIndex=t.id===current?0:-1;b.innerHTML='<span class=\"tab-dot\" aria-hidden=\"true\"></span><span class=\"tab-label\"></span><span class=\"close-tab\" aria-label=\"Close tab\">\u00d7</span>';b.querySelector('.tab-label').textContent=t.title;\n const glyph=b.querySelector('.tab-dot');\n if(t.view==='web'){\n  try{glyph.textContent=new URL(t.input).hostname.replace(/^www\\./,'').charAt(0).toUpperCase();}catch{}\n }else glyph.innerHTML=icon({home:'home',arcade:'grid',conversations:'sparkle',settings:'settings'}[t.view]||'external');const close=b.querySelector('.close-tab');close.setAttribute('role','button');close.tabIndex=0;close.setAttribute('aria-label','Close tab '+t.title);close.onclick=e=>{e.stopPropagation();closeTab(t.id)};close.onkeydown=e=>{if(['Enter',' '].includes(e.key)){e.preventDefault();e.stopPropagation();closeTab(t.id);}};b.onclick=()=>activateTab(t.id);\n b.onkeydown=event=>{\n  if(event.target!==b||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;\n  event.preventDefault();\n  const index=tabs.indexOf(t);\n  const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(index+tabs.length+(event.key==='ArrowLeft'?-1:1))%tabs.length;\n  activateTab(tabs[next].id);\n  strip.querySelector('[aria-selected=\"true\"]')?.focus({preventScroll:true});\n };\n strip.append(b)}\n const selected=strip.querySelector('[aria-selected=\"true\"]');\n if(selected&&strip.scrollWidth>strip.clientWidth)strip.scrollLeft=Math.max(0,selected.offsetLeft-strip.offsetLeft-(strip.clientWidth-selected.offsetWidth)/2);\n",
+      "previous": " for(const t of tabs){const b=document.createElement('button');b.type='button';b.className='tab-button'+(t.id===current?' active':'');b.setAttribute('role','tab');b.setAttribute('aria-selected',String(t.id===current));b.tabIndex=t.id===current?0:-1;b.innerHTML='<span class=\"tab-dot\"></span><span class=\"tab-label\"></span><span class=\"close-tab\" aria-label=\"Close tab\">\u00d7</span>';b.querySelector('.tab-label').textContent=t.title;const close=b.querySelector('.close-tab');close.setAttribute('role','button');close.tabIndex=0;close.setAttribute('aria-label','Close tab '+t.title);close.onclick=e=>{e.stopPropagation();closeTab(t.id)};close.onkeydown=e=>{if(['Enter',' '].includes(e.key)){e.preventDefault();e.stopPropagation();closeTab(t.id);}};b.onclick=()=>activateTab(t.id);strip.append(b)}\n"
+    },
+    {
+      "current": "function wallpaperSrc(i=wallpaper){return activeWallpaperURL||wallpapers[i]?.src||null}\nfunction applyWallpaper(i){if(!Number.isInteger(i)||i< -1||i>=wallpapers.length)return;wallpaper=i;\n",
+      "previous": "function wallpaperSrc(i=wallpaper){return activeWallpaperURL||wallpapers[i].src}\nfunction applyWallpaper(i){if(i<0||i>=wallpapers.length)return;wallpaper=i;\n"
+    },
+    {
+      "current": " const source=wallpaperSrc();\n $('home-pane')?.querySelector('.atelier-home')?.classList.toggle('has-wallpaper',Boolean(source));\n for(const s of document.querySelectorAll('.wallpaper-scene')){s.style.backgroundImage=source?`url(\"${source}\")`:'none';s.style.backgroundSize='cover';s.style.backgroundPosition='center'}\n for(const c of document.querySelectorAll('.wallpaper-caption'))c.textContent=activeCustom?.name||wallpapers[i]?.name||'';\n",
+      "previous": " for(const s of document.querySelectorAll('.wallpaper-scene')){s.style.backgroundImage=`url(\"${wallpaperSrc()}\")`;s.style.backgroundSize='cover';s.style.backgroundPosition='center'}\n for(const c of document.querySelectorAll('.wallpaper-caption'))c.textContent=activeCustom?.name||wallpapers[i].name;\n"
+    },
+    {
+      "current": " <div class=\"atelier-home-content\"><h1 class=\"home-greeting\" id=\"web-greeting\"></h1><div class=\"home-time\"><p class=\"home-date\" id=\"web-date\"></p><div class=\"home-clock\" id=\"web-clock\"></div></div>\n",
+      "previous": " <div class=\"atelier-home-content\"><div class=\"home-time\"><p class=\"home-date\" id=\"web-date\"></p><div class=\"home-clock\" id=\"web-clock\"></div></div><h1 class=\"home-greeting\" id=\"web-greeting\"></h1>\n"
+    },
+    {
+      "current": " <div class=\"atelier-shortcuts\"><button class=\"shortcut\" data-go=\"arcade\"><span class=\"shortcut-icon\">${icon('grid')}</span><span>Arcade</span></button><button class=\"shortcut\" data-go=\"conversations\"><span class=\"shortcut-icon\">${icon('sparkle')}</span><span>Conversations</span></button><button class=\"shortcut\" data-go=\"settings\"><span class=\"shortcut-icon\">${icon('settings')}</span><span>Settings</span></button><button class=\"shortcut\" data-go=\"web\"><span class=\"shortcut-icon\">${icon('external')}</span><span>Browse</span></button></div>\n",
+      "previous": " <div class=\"atelier-shortcuts\"><button class=\"shortcut\" data-go=\"arcade\"><span class=\"shortcut-icon\">\u2726</span><span>Arcade</span></button><button class=\"shortcut\" data-go=\"conversations\"><span class=\"shortcut-icon\">\u2727</span><span>AI</span></button><button class=\"shortcut\" data-go=\"settings\"><span class=\"shortcut-icon\">\u25c8</span><span>Vibes</span></button><button class=\"shortcut\" data-go=\"web\"><span class=\"shortcut-icon\">\u2197</span><span>Browse</span></button></div>\n"
+    },
+    {
+      "current": " for(const button of body.querySelectorAll('[data-settings-jump]')){\n  button.onclick=()=>{\n   const section=$(button.dataset.settingsJump);\n   section?.scrollIntoView({block:'start'});\n   section?.querySelector('h3')?.focus({preventScroll:true});\n  };\n }\n mountBrowserAccent(body,browserAccent);\n",
+      "previous": ""
+    },
+    {
+      "current": " const grid=$('web-wallpapers');\n const solid=document.createElement('button');solid.type='button';solid.className='web-card solid-wallpaper';solid.dataset.wallpaper='-1';solid.textContent='No wallpaper';solid.onclick=()=>{void selectBuiltinWallpaper(-1).catch(e=>toast(e.message));};grid.append(solid);\n wallpapers.forEach((w,i)=>{const b=document.createElement('button');b.type='button';b.className='web-card';b.dataset.wallpaper=i;const img=document.createElement('img');img.src=w.src;img.alt='';img.loading='lazy';const title=document.createElement('strong');title.textContent=w.name;b.append(img,title);b.onclick=()=>{void selectBuiltinWallpaper(i).catch(e=>toast(e.message));};grid.append(b);});applyWallpaper(wallpaper);\n customControls=mountCustomWallpapers($('custom-wallpaper-settings'),{store:wallpaperStore,activeID:()=>activeCustom?.id,onApply:selectCustomWallpaper,onRemove:removeCustomWallpaper,onReset:()=>selectBuiltinWallpaper(-1)});\n",
+      "previous": " const grid=$('web-wallpapers');wallpapers.forEach((w,i)=>{const b=document.createElement('button');b.type='button';b.className='web-card';b.dataset.wallpaper=i;const img=document.createElement('img');img.src=w.src;img.alt='';img.loading='lazy';const title=document.createElement('strong');title.textContent=w.name;b.append(img,title);b.onclick=()=>{void selectBuiltinWallpaper(i).catch(e=>toast(e.message));};grid.append(b);});applyWallpaper(wallpaper);\n customControls=mountCustomWallpapers($('custom-wallpaper-settings'),{store:wallpaperStore,activeID:()=>activeCustom?.id,onApply:selectCustomWallpaper,onRemove:removeCustomWallpaper,onReset:()=>selectBuiltinWallpaper(6)});\n"
+    },
+    {
+      "current": "const browserAccent=createBrowserAccent(featureStorage,document.body);\n",
+      "previous": ""
+    }
+  ],
+  "public/navigation.mjs": [
+    {
+      "current": "  try {const d=JSON.parse(storage.getItem('poxey-web-recovery-v1')||'{}');return {wallpaper:Number.isInteger(d.wallpaper)&&d.wallpaper>=-1&&d.wallpaper<47?d.wallpaper:-1,theme:['black','light','dark'].includes(d.theme)?d.theme:'black',rememberTabs:d.rememberTabs===true,tabs:d.rememberTabs===true&&Array.isArray(d.tabs)?d.tabs.filter(t=>t&&typeof t==='object'&&typeof t.input==='string'&&t.input.length<=4096).slice(0,12):[]};}catch{return {wallpaper:-1,theme:'black',rememberTabs:false,tabs:[]};}\n",
+      "previous": "  try {const d=JSON.parse(storage.getItem('poxey-web-recovery-v1')||'{}');return {wallpaper:Number.isInteger(d.wallpaper)&&d.wallpaper>=0&&d.wallpaper<47?d.wallpaper:6,theme:d.theme==='light'?'light':'dark',rememberTabs:d.rememberTabs===true,tabs:d.rememberTabs===true&&Array.isArray(d.tabs)?d.tabs.filter(t=>t&&typeof t==='object'&&typeof t.input==='string'&&t.input.length<=4096).slice(0,12):[]};}catch{return {wallpaper:6,theme:'dark',rememberTabs:false,tabs:[]};}\n"
+    }
+  ],
+  "public/features/settings-ui.mjs": [
+    {
+      "current": "import {accentSettingsHTML} from './browser-appearance.mjs';\n",
+      "previous": ""
+    },
+    {
+      "current": "export function settingsHTML(){return `<div class=\"poxey-settings\"><nav class=\"settings-jump\" aria-label=\"Settings categories\"><button type=\"button\" data-settings-jump=\"settings-browsing\">Browsing</button><button type=\"button\" data-settings-jump=\"settings-privacy\">Privacy &amp; Sessions</button><button type=\"button\" data-settings-jump=\"settings-tabs\">Tab Appearance</button><button type=\"button\" data-settings-jump=\"settings-ai\">Conversations</button><button type=\"button\" data-settings-jump=\"settings-appearance\">Appearance</button></nav><section class=\"feature-section\" id=\"settings-browsing\"><h3 tabindex=\"-1\">Browsing</h3><label class=\"settings-select\"><span>Search engine</span><select id=\"feature-search-engine\" aria-label=\"Search engine\"><option value=\"duckduckgo\">DuckDuckGo</option><option value=\"google\">Google</option><option value=\"bing\">Bing</option></select></label><div class=\"feature-tabs\"><button class=\"web-action\" id=\"settings-bookmarks\">Bookmarks</button><button class=\"web-action\" id=\"settings-history\">History</button></div></section>\n<section class=\"feature-section\" id=\"settings-privacy\"><h3 tabindex=\"-1\">Privacy &amp; Sessions</h3>\n",
+      "previous": "export function settingsHTML(){return `<div class=\"poxey-settings\"><section class=\"feature-section\"><h3>Browsing</h3><label class=\"settings-select\"><span>Search engine</span><select id=\"feature-search-engine\" aria-label=\"Search engine\"><option value=\"duckduckgo\">DuckDuckGo</option><option value=\"google\">Google</option><option value=\"bing\">Bing</option></select></label><div class=\"feature-tabs\"><button class=\"web-action\" id=\"settings-bookmarks\">Bookmarks</button><button class=\"web-action\" id=\"settings-history\">History</button></div></section>\n<section class=\"feature-section\"><h3>Privacy &amp; Sessions</h3>\n"
+    },
+    {
+      "current": "<section class=\"feature-section\" id=\"settings-ai\"><h3 tabindex=\"-1\">Conversations</h3>\n",
+      "previous": "<section class=\"feature-section\"><h3>Conversations</h3>\n"
+    },
+    {
+      "current": "</section><section class=\"feature-section\" id=\"settings-appearance\"><h3 tabindex=\"-1\">Appearance</h3><div class=\"feature-tabs\"><button class=\"web-action\" data-appearance=\"black\">True Black</button><button class=\"web-action\" data-appearance=\"dark\">Dark</button><button class=\"web-action\" data-appearance=\"light\">Light</button></div>\n${accentSettingsHTML()}\n",
+      "previous": "</section><section class=\"feature-section\"><h3>Appearance</h3><div class=\"feature-tabs\"><button class=\"web-action\" data-appearance=\"dark\">Dark</button><button class=\"web-action\" data-appearance=\"light\">Light</button></div>\n"
+    }
+  ],
+  "public/features/tab-appearance.mjs": [
+    {
+      "current": " black: {active:'#171717', inactive:'#090909', text:'#ffffff', accent:'#168bff'},\n",
+      "previous": ""
+    },
+    {
+      "current": " const currentDefaults=()=>defaults[body.dataset.theme]||defaults.black;\n",
+      "previous": " const currentDefaults=()=>defaults[body.dataset.theme==='light'?'light':'dark'];\n"
+    },
+    {
+      "current": " return `<section class=\"feature-section tab-appearance\" id=\"settings-tabs\">\n <h3 tabindex=\"-1\">Tab Appearance</h3>\n",
+      "previous": " return `<section class=\"feature-section tab-appearance\">\n <h3>Tab Appearance</h3>\n"
+    }
+  ],
+  "public/index.html": [
+    {
+      "current": "<link rel=\"stylesheet\" href=\"features/premium.css\">\n",
+      "previous": ""
+    },
+    {
+      "current": "<body class=\"web-edition\" data-theme=\"black\" data-tab-layout=\"horizontal\">\n",
+      "previous": "<body class=\"web-edition\" data-theme=\"dark\" data-tab-layout=\"horizontal\">\n"
+    }
+  ]
+}
